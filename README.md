@@ -18,18 +18,23 @@ I use GNU Stow to manage my dotfiles as it is simple to use and keeps my home di
 #Quick Install
 
 Go to your home directory
+
 ```cd ~```
 
 Clone the repo
+
 ```git clone http://github.com/dmarcoux/dotfiles```
 
 Go to the dotfiles directory
+
 ```cd dotfiles```
 
 Install *xyz* (vim for example)
+
 ```stow vim```
 
 Uninstall *xyz* (vim for example)
+
 ```stow -D vim```
 
 
@@ -38,16 +43,21 @@ Uninstall *xyz* (vim for example)
 Bits and chunks of my config files come from these sources. Thanks to the people behind them!
 
 - Using GNU Stow to manage your dotfiles
-brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
+
+http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
 
 - vim
+
 https://github.com/amix/vimrc
 
 - zsh, vim
+
 https://github.com/xero/dotfiles
 
 - Solarized theme for vim
+
 https://github.com/altercation/vim-colors-solarized
 
 - Solarized theme for termite
+
 https://github.com/alpha-omega/termite-colors-solarized
