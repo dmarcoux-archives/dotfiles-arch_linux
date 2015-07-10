@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+################################
+# Shows info about sound/volume.
+#
+# Dependencies:
+# - pulseaudio-ctl
+# - font awesome (icons)
+#
+################################
+
+full_audio_status=$(pulseaudio-ctl full-status)
+# Create an array which contains the volume in the first part and the mute state in the second part
+array_audio=($full_audio_status)
+
+vol=${array_audio[0]}
+
+# Set the mute status and the color
+if [ ${array_audio[1]} = "yes" ]; then 
+    is_muted=true
+    color="#FF0000"
+else
+    is_muted=false
+    color="#FFFFFF"
+fi
+
+# Determine icon
+if [ $vol -eq 0 ] || $is_muted; then
+        icon=""
+else
+    if [ $vol -le 33 ]; then
+        icon=""
+    else
+        icon=""
+    fi
+fi
+
+echo $icon $vol"%" # full text
+echo $icon $vol"%" # short text
+echo $color
+exit 0 # status
