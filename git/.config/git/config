@@ -1,0 +1,8 @@
+[alias]
+    cko = checkout
+    com = commit
+    sta = status
+    bra = branch
+    hist = log --pretty=format:\"%h %ad [%an] %s%d\" --graph --date=short
+    chp = cherry-pick
+    pure = pull --rebase
