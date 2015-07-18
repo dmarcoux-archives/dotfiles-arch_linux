@@ -35,19 +35,13 @@ bar {
 #################
 
 # Start composite manager
-#exec --no-startup-id compton -CGb --config ~/.config/compton/config 
+exec --no-startup-id compton -CGb --config ~/.config/compton/config 
 
 # Start audio server 
 exec --no-startup-id pulseaudio --start
 
-# Network manager
-#exec --no-startup-id nm-applet
-
 # Wallpaper
 #exec --no-startup-id feh --bg-scale /home/zeta/Pictures/New-Wallpapers/Landscapes/1420375693926.png
-
-# Start the sound manager
-#exec --no-startup-id 
 
 # Start a terminal on the first workspace
 exec --no-startup-id i3-msg 'workspace $WS1; termite;'
