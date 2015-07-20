@@ -7,5 +7,5 @@
     chp = cherry-pick
     pure = pull --rebase
 [user]
-	email = danymarcoux@gmail.com
-	name = Dany Marcoux
+    email = danymarcoux@gmail.com
+    name = Dany Marcoux
