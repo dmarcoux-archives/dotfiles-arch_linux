@@ -6,3 +6,6 @@
     hist = log --pretty=format:\"%h %ad [%an] %s%d\" --graph --date=short
     chp = cherry-pick
     pure = pull --rebase
+[user]
+	email = danymarcoux@gmail.com
+	name = Dany Marcoux
