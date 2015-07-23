@@ -43,11 +43,6 @@ exec --no-startup-id pulseaudio --start
 # Wallpaper
 #exec --no-startup-id feh --bg-scale /home/zeta/Pictures/New-Wallpapers/Landscapes/1420375693926.png
 
-# Start a terminal on the first workspace
-exec --no-startup-id i3-msg 'workspace $WS1; termite;'
-# Start firefox on the second workspace
-exec --no-startup-id i3-msg 'workspace $WS2; firefox;'
-
 #################
 # Functions
 #################
