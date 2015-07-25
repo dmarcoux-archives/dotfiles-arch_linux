@@ -3,6 +3,19 @@
 separator_block_width=30
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
 
+[wifi]
+label=
+interval=10
+
+[separator]
+
+[ethernet]
+label=
+instance=enp2s0
+interval=10
+
+[separator]
+
 [cpu_usage]
 label=CPU
 interval=10
@@ -18,7 +31,7 @@ signal=1
 [battery]
 color=#66ff33
 interval=30
-signal=2 
+signal=2
 
 [separator]
 

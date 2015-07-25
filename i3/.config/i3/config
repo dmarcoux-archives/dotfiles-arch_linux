@@ -35,9 +35,9 @@ bar {
 #################
 
 # Start composite manager
-exec --no-startup-id compton -CGb --config ~/.config/compton/config 
+exec --no-startup-id compton -CGb --config ~/.config/compton/config
 
-# Start audio server 
+# Start audio server
 exec --no-startup-id pulseaudio --start
 
 # Wallpaper
@@ -76,8 +76,8 @@ mode "resize" {
 #################
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up   && pkill -SIGRTMIN+1 i3blocks 
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down && pkill -SIGRTMIN+1 i3blocks 
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up   && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down && pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMute        exec pulseaudio-ctl mute && pkill -SIGRTMIN+1 i3blocks
 
 # Brightness adjustment function keys
@@ -87,10 +87,10 @@ bindsym XF86AudioMute        exec pulseaudio-ctl mute && pkill -SIGRTMIN+1 i3blo
 # Touchpad toggle function key
 #bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
 
-# Screen lock 
+# Screen lock
 bindsym Control+$mod+l exec sflock
 
-# Start a terminal 
+# Start a terminal
 bindsym $mod+Return exec termite
 
 # kill focused window
