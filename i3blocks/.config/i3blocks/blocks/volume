@@ -9,14 +9,11 @@
 #
 ################################
 
-full_audio_status=$(pulseaudio-ctl full-status)
-# Create an array which contains the volume in the first part and the mute state in the second part
-array_audio=($full_audio_status)
-
-vol=${array_audio[0]}
+vol=$(ponymix get-volume)
+$(ponymix is-muted) # Return an exit code of 0 if muted, otherwise 1
 
 # Set the mute status and the color
-if [ ${array_audio[1]} = "yes" ]; then
+if [ $(echo $?) = 0 ]; then
     is_muted=true
     color="#FF0000"
 else
