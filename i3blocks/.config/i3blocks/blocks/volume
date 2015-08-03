@@ -4,7 +4,7 @@
 # Shows info about sound/volume.
 #
 # Dependencies:
-# - pulseaudio-ctl
+# - ponymix
 # - font awesome (icons)
 #
 ################################

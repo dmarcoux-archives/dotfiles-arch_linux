@@ -61,3 +61,7 @@ https://github.com/altercation/vim-colors-solarized
 - Solarized theme for termite
 
 https://github.com/alpha-omega/termite-colors-solarized
+
+- i3blocks (cpu_usage, ethernet and wifi)
+
+https://github.com/vivien/i3blocks
