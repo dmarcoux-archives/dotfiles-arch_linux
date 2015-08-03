@@ -4,13 +4,12 @@ separator_block_width=30
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
 
 [wifi]
-label=
+instance=wlp3s0
 interval=10
 
 [separator]
 
 [ethernet]
-label=
 instance=enp2s0
 interval=10
 
