@@ -143,13 +143,16 @@ map k gk
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files
 autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 " Remember info about open buffers on close
 set viminfo^=%
+
+" Convert all tabs to spaces when opening modifiable files
+autocmd BufReadPost * if &modifiable | retab | endif
 
 " Always show the status line
 set laststatus=2
