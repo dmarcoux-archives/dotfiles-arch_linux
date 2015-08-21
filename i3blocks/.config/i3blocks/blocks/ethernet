@@ -37,7 +37,7 @@ icon=""
 if [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
   echo $icon # full text
   echo $icon # short text
-  echo "#FF0000" # color
+  echo "#DC322F" # color
   exit
 fi
 

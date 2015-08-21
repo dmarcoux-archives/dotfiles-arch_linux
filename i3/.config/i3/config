@@ -6,10 +6,38 @@
 set $mod Mod4
 
 # Workspaces
-set $WS1 "1: term"
-set $WS2 "2: web"
-set $WS3 "3: media"
-set $WS4 "4: etc"
+set $WS1 "1:term"
+set $WS2 "2:web"
+set $WS3 "3:media"
+set $WS4 "4:etc"
+
+#################
+# Colorscheme
+#################
+
+# Solarized (Light) colors
+set $S_base03        #002B36
+set $S_base02        #073642
+set $S_base01        #586E75
+set $S_base00        #657B83
+set $S_base0         #839496
+set $S_base1         #93A1A1
+set $S_base2         #EEE8D5
+set $S_base3         #FDF6E3
+set $S_yellow        #B58900
+set $S_orange        #CB4B16
+set $S_red           #DC322F
+set $S_magenta       #D33682
+set $S_violet        #6C71C4
+set $S_blue          #268BD2
+set $S_cyan          #2AA198
+set $S_green         #859900
+
+# TYPE                   BORDER      BACKGROUND  TEXT
+client.focused           $S_green    $S_green    $S_base3
+client.unfocused         $S_base02   $S_base02   $S_base3
+client.focused_inactive  $S_base02   $S_base02   $S_base3
+client.urgent            $S_red      $S_red      $S_base3
 
 #################
 # Settings
@@ -27,107 +55,115 @@ floating_modifier $mod
 bar {
     status_command i3blocks
     position top
+    font pango:DejaVu Sans Mono 13
+    strip_workspace_numbers yes
+
+    colors {
+        # Solarized (Light) colors
+        background $S_base3
+        statusline $S_base03
+        separator  $S_base03
+
+        # TYPE              BORDER    BACKGROUND  TEXT
+        focused_workspace   $S_base3  $S_green    $S_base3
+        active_workspace    $S_base3  $S_violet   $S_base3
+        inactive_workspace  $S_base3  $S_base2    $S_base03
+        urgent_workspace    $S_base3  $S_red      $S_base3
+    }
 }
 
 #################
-# Start applications
+# Applications
 #################
 
-# Start composite manager
+# Start composite manager (compton)
 exec --no-startup-id compton -CGb --config ~/.config/compton/config
 
-# Start audio server
+# Start audio server (pulseaudio)
 exec --no-startup-id pulseaudio --start
 
-# Wallpaper
-#exec --no-startup-id feh --bg-scale /home/zeta/Pictures/New-Wallpapers/Landscapes/1420375693926.png
+# Set wallpaper with feh
+exec --no-startup-id feh --bg-scale /home/dany/dotfiles/wallpaper.jpg
+
+# Assign programs to workspaces
+assign [class="^Firefox$"] → $WS2
+assign [class="^Chromium$"] → $WS2
+assign [class="^Steam$"] → $WS3
+assign [class="^Skype$"] → $WS3
+assign [class="^t-engine$"] → $WS3
 
 #################
 # Key bindings
 #################
 
-# Pulse Audio controls
+# Sound control function keys
 bindsym XF86AudioRaiseVolume exec ponymix increase 5 && pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec ponymix decrease 5 && pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMute        exec ponymix toggle     && pkill -SIGRTMIN+1 i3blocks
 
 # Brightness adjustment function keys
-#bindsym XF86KbdBrightnessDown exec "sudo /opt/kbdlight/bin/kbdlight -"
-#bindsym XF86KbdBrightnessUp exec "sudo /opt/kbdlight/bin/kbdlight +"
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # Exit i3
 bindsym $mod+Shift+Escape exit
 
+# Restart i3 (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
 # Screen lock
 bindsym Control+$mod+l exec sflock
 
-# Start a terminal
+# Start a terminal (termite)
 bindsym $mod+Return exec termite
 
-# kill focused window
+# Kill the focused window
 bindsym $mod+Shift+q kill
 
-# start j4-dmenu-desktop (a program launcher)
+# Start the program launcher (j4-dmenu-desktop)
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Mono 13' -l 10"
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
+# Change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
+# Move the focused window
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# Split in horizontal, vertical orientation
+bindsym $mod+h split horizontal
+bindsym $mod+v split vertical
 
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+Shift+a focus parent
 
-# focus the child container
+# Focus the child container
 bindsym $mod+a focus child
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
 bindsym $mod+4 workspace $WS4
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
 bindsym $mod+Shift+4 move container to workspace $WS4
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
-# toggle the floating mode for the window
+# Toggle the floating mode for the window
 bindsym $mod+Tab floating toggle
