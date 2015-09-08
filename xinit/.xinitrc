@@ -1,5 +1,5 @@
-# Set the keyboard layout to Canadian Multilingual
-setxkbmap -layout ca -variant multi
+# Set the keyboard layout to Canadian Multilingual with the option RightAlt+4 = €
+setxkbmap -layout ca -variant multi -option eurosign:4
 
 # Start i3
 exec i3
