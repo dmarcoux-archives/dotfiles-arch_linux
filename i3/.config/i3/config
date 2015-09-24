@@ -95,6 +95,12 @@ assign [class="^Steam$"] → $WS3
 assign [class="^Skype$"] → $WS3
 assign [class="^t-engine$"] → $WS3
 
+# Start a terminal
+exec --no-startup-id termite
+
+# Start a web browser (firefox)
+exec --no-startup-id firefox
+
 #################
 # Key bindings
 #################
@@ -119,6 +125,9 @@ bindsym Control+$mod+l exec sflock
 
 # Start a terminal (termite)
 bindsym $mod+Return exec termite
+
+# Start an offline documentation browser (zeal)
+bindsym $mod+Z exec zeal
 
 # Kill the focused window
 bindsym $mod+Shift+q kill
