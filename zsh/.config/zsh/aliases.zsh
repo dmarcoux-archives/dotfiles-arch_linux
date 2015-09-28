@@ -26,3 +26,8 @@ alias chgrp='chgrp --preserve-root'
 # Package management
 alias pacman="sudo pacman"
 alias aura="sudo aura"
+alias sup="pacman -Syu && aura -Akyu"
+
+# Databases
+alias start-psql="systemctl start postgresql.service"
+alias stop-psql="systemctl stop postgresql.service"
