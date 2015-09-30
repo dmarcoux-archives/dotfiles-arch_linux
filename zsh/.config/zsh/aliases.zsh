@@ -31,3 +31,9 @@ alias sup="pacman -Syu && aura -Akyu"
 # Databases
 alias start-psql="systemctl start postgresql.service"
 alias stop-psql="systemctl stop postgresql.service"
+
+# Ruby
+alias b="bundle"
+alias bi="bundle install"
+alias be="bundle exec"
+alias bl="bundle list"
