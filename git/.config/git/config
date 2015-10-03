@@ -1,11 +1,14 @@
 [alias]
-    cko = checkout
-    com = commit
-    sta = status
-    bra = branch
-    hist = log --pretty=format:\"%h %ad [%an] %s%d\" --graph --date=short
-    chp = cherry-pick
-    pure = pull --rebase
+  cko = checkout
+  com = commit
+  sta = status
+  bra = branch
+  hist = log --pretty=format:\"%h %ad [%an] %s%d\" --graph --date=short
+  chp = cherry-pick
+  pure = pull --rebase
+  lo = log --oneline
 [user]
-    email = danymarcoux@gmail.com
-    name = Dany Marcoux
+  email = danymarcoux@gmail.com
+  name = Dany Marcoux
+[push]
+  default = nothing
