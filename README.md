@@ -29,14 +29,17 @@ Go to the dotfiles directory
 
 ```cd dotfiles```
 
-Install *xyz* (vim for example)
+Install *xyz* in $HOME (vim for example)
 
 ```stow vim```
 
-Uninstall *xyz* (vim for example)
+Uninstall *xyz* from $HOME (vim for example)
 
 ```stow -D vim```
 
+Install *abc* in a specific directory (etc in the directory / for example)
+
+```sudo stow -t / etc```
 
 #Credits
 
