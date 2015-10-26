@@ -1,0 +1,9 @@
+aura-bin
+compton-git
+i3blocks
+j4-dmenu-desktop
+mupdf-git
+otf-font-awesome
+sflock-git
+ttf-font-awesome
+zeal

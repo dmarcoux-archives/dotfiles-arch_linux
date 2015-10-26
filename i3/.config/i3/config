@@ -93,7 +93,6 @@ assign [class="^Firefox$"] → $WS2
 assign [class="^Chromium$"] → $WS2
 assign [class="^Steam$"] → $WS3
 assign [class="^Skype$"] → $WS3
-assign [class="^t-engine$"] → $WS3
 
 # Start a terminal
 exec --no-startup-id termite
