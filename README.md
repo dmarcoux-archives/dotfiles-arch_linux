@@ -29,6 +29,14 @@ Go to the dotfiles directory
 
 ```cd dotfiles```
 
+Install packages from official repositories and AUR
+
+```
+pacman -S $(< pkgs.txt)
+aura -A $(< aur-pkgs.txt)
+```
+
+
 Install *xyz* in $HOME (vim for example)
 
 ```stow vim```
