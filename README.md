@@ -29,6 +29,16 @@ Go to the dotfiles directory
 
 ```cd dotfiles```
 
+Install aura (if you need packages from AUR) #TODO: Script for this
+```
+mkdir tmp
+cd tmp
+wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=aura-bin
+mv PKGBUILD?h=aura-bin PKGBUILD
+makepkg
+pacman -U aura*.pkg.tar.gz
+```
+
 Install packages from official repositories and AUR
 
 ```
@@ -64,7 +74,7 @@ http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfile
 
 https://github.com/amix/vimrc
 
-- zsh, vim
+- zsh, vim, GNU Stow usage
 
 https://github.com/xero/dotfiles
 
