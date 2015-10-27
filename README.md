@@ -32,22 +32,25 @@ Go to the dotfiles directory
 Install packages from official repositories and AUR
 
 ```
-pacman -S $(< pkgs.txt)
-aura -A $(< aur-pkgs.txt)
+pacman -S $(< pkgs/personal/pkgs.txt)
+aura -A $(< pkgs/personal/aur-pkgs.txt)
 ```
 
-
-Install *xyz* in $HOME (vim for example)
+Install *xyz* in $HOME (for example, vim)
 
 ```stow vim```
 
-Uninstall *xyz* from $HOME (vim for example)
+Uninstall *xyz* from $HOME (for example, vim)
 
 ```stow -D vim```
 
-Install *abc* in a specific directory (etc in the directory / for example)
+Install *abc* in a specific directory (for example, etc in the directory /)
 
 ```sudo stow -t / etc```
+
+Uninstall *abc* from a specific directory (for example, etc in the directory /)
+
+```sudo stow -D etc -t /```
 
 #Credits
 
