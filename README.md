@@ -29,21 +29,17 @@ Go to the dotfiles directory
 
 ```cd dotfiles```
 
-Install aura (if you need packages from AUR) #TODO: Script for this
-```
-mkdir tmp
-cd tmp
-wget -O PKGBUILD 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=aura-bin'
-makepkg
-pacman -U aura*.pkg.tar.gz
-```
+Install packages from official repositories
 
-Install packages from official repositories and AUR
+```pacman -S $(< pkgs/personal/pkgs.txt)```
 
-```
-pacman -S $(< pkgs/personal/pkgs.txt)
-aura -A $(< pkgs/personal/aur-pkgs.txt)
-```
+Install aura (if you need packages from AUR)
+
+```bash install_aura.sh```
+
+Install packages from AUR
+
+```aura -A $(< pkgs/personal/aur-pkgs.txt)```
 
 Install *xyz* in $HOME (for example, vim)
 
