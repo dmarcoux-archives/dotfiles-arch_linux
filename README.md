@@ -33,8 +33,7 @@ Install aura (if you need packages from AUR) #TODO: Script for this
 ```
 mkdir tmp
 cd tmp
-wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=aura-bin
-mv PKGBUILD?h=aura-bin PKGBUILD
+wget -O PKGBUILD 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=aura-bin'
 makepkg
 pacman -U aura*.pkg.tar.gz
 ```
