@@ -35,7 +35,7 @@ Install packages from official repositories
 
 Install aura (if you need packages from AUR)
 
-```bash install_aura.sh```
+```bash scripts/install_aura.sh```
 
 Install packages from AUR
 
@@ -84,3 +84,7 @@ https://github.com/alpha-omega/termite-colors-solarized
 - i3blocks (cpu_usage, ethernet and wifi)
 
 https://github.com/vivien/i3blocks
+
+- configure_xrandr script
+
+https://github.com/j-san/i3-config/blob/master/configure-xrandr.sh

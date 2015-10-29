@@ -72,6 +72,9 @@ bar {
     }
 }
 
+# Script to configure displays when refreshing i3
+exec_always ~/dotfiles/configure_xrandr.sh
+
 #################
 # Applications
 #################
@@ -120,7 +123,7 @@ bindsym $mod+Shift+Escape exit
 bindsym $mod+Shift+r restart
 
 # Screen lock
-bindsym Control+$mod+l exec sflock
+bindsym $mod+Shift+l exec sflock
 
 # Start a terminal (termite)
 bindsym $mod+Return exec termite
