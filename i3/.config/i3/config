@@ -43,6 +43,12 @@ client.urgent            $S_red      $S_red      $S_base3
 # Settings
 #################
 
+# Window focus doesn't follow mouse movements
+focus_follows_mouse no
+
+# New containers on workspace starts in tabbed mode
+workspace_layout tabbed
+
 workspace_auto_back_and_forth yes
 
 # Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
@@ -116,8 +122,8 @@ bindsym XF86AudioMute        exec ponymix toggle     && pkill -SIGRTMIN+1 i3bloc
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
-# Exit i3
-bindsym $mod+Shift+Escape exit
+# Exit i3 #TODO: Use j4-dmenu-desktop instead of dmenu and put this in a script
+bindsym $mod+Shift+Escape exec sh -c '[ $(echo "y/n" | dmenu -sb "#ff6600" -i -p "Exit i3?") = "y" ] && i3-msg exit'
 
 # Restart i3 (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
