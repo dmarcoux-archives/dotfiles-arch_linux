@@ -4,6 +4,11 @@
 My Linux config files
 ```
 
+######TODO
+* Master branch which has only dotfiles common for personal and work setups
+* Personal and work branches which have dotfiles specific to their setup
+
+
 
 #Introduction
 
