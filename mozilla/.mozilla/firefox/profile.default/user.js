@@ -52,11 +52,6 @@ user_pref("browser.search.defaultenginename", "DuckDuckGo");
 // http://kb.mozillazine.org/Clipboard.autocopy
 user_pref("clipboard.autocopy", false);
 
-// Display an error message indicating the entered information is not a valid
-// URL instead of asking from google.
-// http://kb.mozillazine.org/Keyword.enabled#Caveats
-user_pref("keyword.enabled",false);
-
 // Don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled",false);
