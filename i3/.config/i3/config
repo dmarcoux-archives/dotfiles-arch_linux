@@ -77,7 +77,7 @@ bar {
 }
 
 # Script to configure displays when refreshing i3
-exec_always bash ~/dotfiles/configure_xrandr.sh
+exec_always bash ~/dotfiles/scripts/configure_xrandr.sh
 
 #################
 # Applications
