@@ -1,4 +1,5 @@
 #!/bin/bash -e
+# -e: If any command in the script fails (i.e. returns a non-zero exist status), then the whole script immediately fails
 
 PRIMARY="eDP1"
 SECONDARY_1="HDMI1"

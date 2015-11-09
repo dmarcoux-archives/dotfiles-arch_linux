@@ -24,7 +24,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# Package management
+# Package management and system upgrades
 alias pacman="sudo pacman"
 alias aura="sudo aura"
 alias sup="pacman -Syu && aura -Akyu"
