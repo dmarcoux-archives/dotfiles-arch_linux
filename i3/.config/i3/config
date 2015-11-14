@@ -134,9 +134,6 @@ bindsym $mod+Shift+l exec sflock
 # Start a terminal (termite)
 bindsym $mod+Return exec termite
 
-# Start an offline documentation browser (zeal)
-bindsym $mod+Z exec zeal
-
 # Kill the focused window
 bindsym $mod+Shift+q kill
 
