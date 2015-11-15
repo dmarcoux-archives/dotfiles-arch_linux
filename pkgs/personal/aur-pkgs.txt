@@ -6,4 +6,3 @@ mupdf-git
 otf-font-awesome
 sflock-git
 ttf-font-awesome
-zeal

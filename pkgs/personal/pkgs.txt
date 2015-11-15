@@ -54,9 +54,7 @@ mariadb
 mdadm
 mesa
 networkmanager
-networkmanager-openvpn
 openssh
-openvpn
 pacman
 patch
 pciutils
