@@ -129,55 +129,51 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym $mod+Shift+Escape exec sh -c '[ $(echo "y/n" | dmenu -sb "#ff6600" -i -p "Exit i3?") = "y" ] && i3-msg exit'
 
 # Restart i3 (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+R restart
 
 # Screen lock
-bindsym $mod+Shift+l exec sflock
+bindsym $mod+Shift+C exec sflock
 
 # Start a terminal (termite)
 bindsym $mod+Return exec termite
 
 # Kill the focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+Q kill
 
 # Start the program launcher (j4-dmenu-desktop)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Mono 13' -l 10"
+bindsym $mod+D exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Mono 13' -l 10"
 
 # Change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+H focus left
+bindsym $mod+J focus down
+bindsym $mod+K focus up
+bindsym $mod+L focus right
 
 # Move the focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+H move left
+bindsym $mod+Shift+J move down
+bindsym $mod+Shift+K move up
+bindsym $mod+Shift+L move right
 
 # Move the focused workspace between monitors
-bindsym $mod+Control+Left move workspace to output left
-bindsym $mod+Control+Down move workspace to output down
-bindsym $mod+Control+Up move workspace to output up
-bindsym $mod+Control+Right move workspace to output right
-
-# Split in horizontal, vertical orientation
-bindsym $mod+h split horizontal
-bindsym $mod+v split vertical
+bindsym $mod+Control+H move workspace to output left
+bindsym $mod+Control+J move workspace to output down
+bindsym $mod+Control+K move workspace to output up
+bindsym $mod+Control+L move workspace to output right
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+S layout stacking
+bindsym $mod+W layout tabbed
+bindsym $mod+E layout toggle split
 
 # Focus the parent container
-bindsym $mod+Shift+a focus parent
+bindsym $mod+Shift+A focus parent
 
 # Focus the child container
-bindsym $mod+a focus child
+bindsym $mod+A focus child
 
 # Switch to workspace
 bindsym $mod+1 workspace $WS1
