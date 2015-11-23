@@ -5,10 +5,15 @@ alias ping='ping -c 3' # Ping with 3 packets
 alias wget='wget -c' # Always resume download if partial file found
 alias history='history 1' # Retrieve all history (useful when using with grep)
 
-# Shortcuts
+# General shortcuts
 alias c=clear
-alias ..='cd ..'
-alias ...='cd ../..'
+alias up=upup
+
+# systemctl shortcurts
+alias sa='systemctl start'
+alias so='systemctl stop'
+alias se='systemctl enable'
+alias sd='systemctl disable'
 
 # Safety nets
 # prompt when removing more than 3 files at a time and do not remove '/'
