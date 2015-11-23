@@ -6,6 +6,15 @@ set nocompatible
 let mapleader = ","
 let g:mapleader = ","
 
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " Paste without auto indentation
 set paste
 
@@ -14,10 +23,6 @@ set hidden
 
 " Sets how many lines of history VIM has to remember
 set history=700
-
-" Maintain undo history between sessions
-set undofile
-set undodir=~/.vim/undo
 
 " Mouse can be used in all modes
 set mouse=a
