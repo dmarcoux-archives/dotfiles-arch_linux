@@ -8,7 +8,6 @@ binutils
 bison
 bluez
 bzip2
-chromium
 coreutils
 cryptsetup
 device-mapper
@@ -24,8 +23,6 @@ findutils
 firefox
 flex
 gawk
-gcc
-gcc-libs
 gettext
 glibc
 grep
@@ -54,6 +51,7 @@ mariadb
 mdadm
 mesa
 networkmanager
+nfs-utils
 openssh
 pacman
 patch
@@ -80,6 +78,7 @@ sysfsutils
 sysstat
 systemd-sysvcompat
 tar
+tcl
 termite
 texinfo
 ttf-dejavu
@@ -89,7 +88,10 @@ unrar
 unzip
 usbutils
 util-linux
+vlc
 w3m
+weechat
+wget
 which
 wireless_tools
 wpa_supplicant

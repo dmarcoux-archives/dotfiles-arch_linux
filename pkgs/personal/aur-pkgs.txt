@@ -2,7 +2,11 @@ aura-bin
 compton-git
 i3blocks
 j4-dmenu-desktop
+lib32-libaudio2
+lib32-libpng12
+libpng12
 mupdf-git
 otf-font-awesome
 sflock-git
+ttf-chromeos-fonts
 ttf-font-awesome

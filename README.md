@@ -62,6 +62,7 @@ Uninstall *abc* from a specific directory (for example, etc in the directory /)
 
 ```sudo stow -D etc -t /```
 
+
 #Credits
 
 Bits and chunks of my config files come from these sources. Thanks to the people behind them!
