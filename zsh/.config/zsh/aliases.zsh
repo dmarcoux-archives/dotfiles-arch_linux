@@ -48,6 +48,6 @@ alias rcophtml="rubocop -f html -o ./tmp/rubocop.html"
 
 # cURL
 alias cpost="curl -v -X POST"
-alias cget="curl -v -X GET"
+alias cget="curl -v --get"
 alias cput="curl -v -X PUT"
 alias cdelete="curl -v -X DELETE"
