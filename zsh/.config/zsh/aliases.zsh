@@ -45,3 +45,9 @@ alias be="bundle exec"
 alias bl="bundle list"
 alias rcop="rubocop"
 alias rcophtml="rubocop -f html -o ./tmp/rubocop.html"
+
+# cURL
+alias cpost="curl -v -X POST"
+alias cget="curl -v -X GET"
+alias cput="curl -v -X PUT"
+alias cdelete="curl -v -X DELETE"
