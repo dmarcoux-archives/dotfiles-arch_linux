@@ -117,8 +117,8 @@ exec --no-startup-id firefox
 #################
 
 # Sound control function keys
-bindsym XF86AudioRaiseVolume exec ponymix increase 5 && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec ponymix decrease 5 && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec ponymix increase 2 && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec ponymix decrease 2 && pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMute        exec ponymix toggle     && pkill -SIGRTMIN+1 i3blocks
 
 # Brightness adjustment function keys
