@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+################################
+# Shows info about ethernet interface
+#
+# Dependencies:
+# - iproute2
+# - gawk
+# - perl
+# - ttf-font-awesome
+#
+################################
+
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 # Copyright (C) 2014 Alexander Keller <github@nycroth.com>
 
