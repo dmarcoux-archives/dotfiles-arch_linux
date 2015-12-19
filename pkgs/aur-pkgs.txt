@@ -1,0 +1,17 @@
+aic94xx-firmware
+aura-bin
+cmst
+dbeaver
+dmenu-frecency-git
+i3blocks
+mupdf-git
+pkgbuild-introspection-git
+pnmixer-git
+rbenv
+ruby-build
+sflock-git
+tag-ag
+ttf-font-awesome
+wd719x-firmware
+xcape
+yank-git

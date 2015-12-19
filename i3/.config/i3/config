@@ -83,6 +83,9 @@ exec ~/dotfiles/scripts/set_keyboard_layout.sh
 
 exec_always ~/dotfiles/scripts/set_xrandr_dpi.sh
 
+# Script to configure displays
+exec_always bash ~/dotfiles/scripts/set_xrandr_both.sh
+
 #################
 # Applications
 #################
