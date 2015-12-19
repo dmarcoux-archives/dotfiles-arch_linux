@@ -9,6 +9,13 @@ interval=10
 
 [separator]
 
+[battery]
+color=#66ff33
+interval=30
+signal=2
+
+[separator]
+
 [time]
 command=date '+%a %d, %B %Y %T'
 interval=1
