@@ -1,5 +1,8 @@
 #!/bin/bash -e
 # -e: If any command in the script fails (i.e. returns a non-zero exist status), then the whole script immediately fails
+# This script always keeps the primary monitor on and uses a secondary monitor when available
+
+# TODO: Put in proper git branch. USED BY PERSONAL AND WORK LAPTOPS.
 
 PRIMARY="eDP1"
 SECONDARY_1="HDMI1"
