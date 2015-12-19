@@ -98,4 +98,5 @@ https://github.com/j-san/i3-config/blob/master/configure-xrandr.sh
 - install_arch_linux mardown file (I made it myself, but couldn't have done it without these references)
 
 https://wiki.archlinux.org/index.php/Beginners'_guide
+
 http://jorisvandijk.com/2014/installing-arch-on-a-uefi-gpt-system/
