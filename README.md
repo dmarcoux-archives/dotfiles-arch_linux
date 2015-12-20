@@ -54,11 +54,11 @@ Uninstall *xyz* from $HOME (for example, vim)
 
 ```stow -D vim```
 
-Install *abc* in a specific directory (for example, etc in the directory /)
+Install *abc* in a specific directory (for example, *etc* in the directory `/`)
 
 ```sudo stow -t / etc```
 
-Uninstall *abc* from a specific directory (for example, etc in the directory /)
+Uninstall *abc* from a specific directory (for example, *etc* from the directory `/`)
 
 ```sudo stow -D etc -t /```
 
