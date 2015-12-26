@@ -13,7 +13,7 @@ I decided to create this repo to backup my dotfiles, but also to share what I us
 
 I use GNU Stow to manage my dotfiles as it is simple to use and keeps my home directory clean without any git files. To understand how to use GNU Stow, I recommend you to read the link *Using GNU Stow to manage your dotfiles* from the **Credits** section below.
 
-To manage the different setups I have between my computers, I simply use Git. I have the `master` branch which is for what is common between all my computers. I have a branch per computer to manage each computer's specific configuration. They are all based on the `master` branch and whenever I updated `master`, I rebase each branch. There might be a tool to handle this type of workflow or something similar, but after some search, I didn't find something which really suits my needs. So, I decided to proceed like this and I am happy with it so far.
+To manage the different setups I have between my computers, I simply use Git. I have the `master` branch which is for what is common between all my computers. I have a branch per computer to manage each computer's specific configuration. They are all based on the `master` branch and whenever I update `master`, I rebase each branch. There might be a tool to handle this type of workflow or something similar, but after some search, I didn't find something which really suits my needs. So, I decided to proceed like this and I am happy with it so far.
 
 
 ###Quick Install
