@@ -125,32 +125,6 @@ Start the system configuration by changing the apparent root directory for the c
 $ arch-chroot /mnt
 ```
 
-Install `git`, `vim` and `GNU Stow` to get, edit and symlink my dotfiles
-```
-$ pacman -S git vim stow
-```
-
-Clone my dotfiles repository
-```
-$ git clone git@github.com:dmarcoux/dotfiles.git
-```
-
-If needed, select the branch specific to this computer. Otherwise, stay on `master`
-```
-$ git checkout MY_BRANCH_NAME
-```
-
-Use the `/etc` configuration files from my dotfiles
-```
-$ rm /etc/locale.gen /etc/locale.conf /etc/pacman.conf /etc/systemd/journald.conf
-$ stow -t / etc
-```
-
-Generate the locales
-```
-$ locale-gen
-```
-
 Set up the hostname
 ```
 $ echo MY_HOST_NAME > /etc/hostname
@@ -161,10 +135,19 @@ Install the boot loader
 $ bootctl install
 ```
 
-Symlink the boot entry from my dotfiles
+Create a boot entry
+```shell
+# /boot/loader/entries/arch.conf
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=/dev/sda2 rw
 ```
-$ mkdir /boot/loader/entries
-$ stow -t / boot
+
+Select the default boot entry
+```shell
+# /boot/loader/loader.conf
+default arch
 ```
 
 Make sure we have a network connection after we reboot
@@ -199,7 +182,7 @@ $ umount -R /mnt
 $ reboot
 ```
 
-Pull the install medium from the system now
+Pull the installation medium from the system now
 
 ### Post-installation
 
@@ -210,10 +193,61 @@ Sync `pacman` databases
 $ pacman -Syy
 ```
 
-Install packages from my dotfiles
+Install `git`, `vim` and `GNU Stow` to get, edit and symlink my dotfiles
+```
+$ pacman -S git vim stow
+```
+
+Clone my dotfiles repository using HTTP for now since my SSH key isn't set on GitHub yet, then go into the directory
+```
+$ git clone http://github.com/dmarcoux/dotfiles.git
+$ cd dotfiles
+```
+
+If needed, select the branch specific to this computer. Otherwise, stay on `master`
+```
+$ git checkout MY_BRANCH_NAME
+```
+
+Use the `/etc` configuration files from my dotfiles
+```
+$ rm /etc/locale.gen /etc/pacman.conf /etc/systemd/journald.conf
+$ stow -t / etc
+```
+
+Generate the locales
+```
+$ locale-gen
+```
+
+Sync `pacman` databases again to get `multilib`
+```
+$ pacman -Syy
+```
+
+Install packages from official repositories
+```
+$ pacman -S $(< pkgs/pkgs.txt)
+```
+
+Symlink all the dotfiles I need with `GNU Stow`
+```shell
+$ stow vim # An example...
+```
+
+Install aura (if I need packages from AUR)
+
+```bash scripts/install_aura.sh```
+
+Install packages from AUR
+
+```aura -A $(< pkgs/aur-pkgs.txt)```
+
+Log out of `root` and log back in as the user created earlier
+```
+exit
+```
 
 TODO:
-- git checkout master
-- Use master for default packages to install
-- install aura
-- Install AUR packages
+1. SSH key to GitHub
+2. Change dotfiles repo to use SSH
