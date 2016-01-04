@@ -220,6 +220,17 @@ Generate the locales
 $ locale-gen
 ```
 
+Set the default shell (see the list with `chsh -l`)
+```
+$ chsh -s /usr/bin/zsh
+```
+
+Set the timezone (make sure to have the package `ntp`)
+```
+$ timedatectl set-ntp true
+$ timedatectl set-timezone Europe/Berlin
+```
+
 Sync `pacman` databases again to get `multilib`
 ```
 $ pacman -Syy
@@ -251,3 +262,4 @@ exit
 TODO:
 1. SSH key to GitHub
 2. Change dotfiles repo to use SSH
+3. Clear up mozilla config, it is confusing now and not automated
