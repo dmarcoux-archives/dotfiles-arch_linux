@@ -193,9 +193,9 @@ Sync `pacman` databases
 $ pacman -Syy
 ```
 
-Install `git`, `vim` and `GNU Stow` to get, edit and symlink my dotfiles
+Install `git`, `gvim` and `GNU Stow` to get, edit and symlink my dotfiles (`gvim` is needed to have the system's clipboard work on Arch Linux)
 ```
-$ pacman -S git vim stow
+$ pacman -S git gvim stow
 ```
 
 Clone my dotfiles repository using HTTP for now since my SSH key isn't set on GitHub yet, then go into the directory
