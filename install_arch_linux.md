@@ -11,7 +11,7 @@ $ ping -c 3 www.google.com
 $ dhcpcd # if it failed
 ```
 
-### Partioning
+### Partitioning
 
 List the storage devices
 ```
