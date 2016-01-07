@@ -1,0 +1,7 @@
+# To prevent having to deal with a lot of manual operations,
+# I ignore everything added by Mozilla Firefox so I can easily use GNU Stow
+mozilla/*
+
+!mozilla/.mozilla/plugins/libflashplayer.so
+!mozilla/.mozilla/firefox/profiles.ini
+!mozilla/.mozilla/profile.default/user.js
