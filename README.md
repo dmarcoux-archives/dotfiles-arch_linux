@@ -131,3 +131,7 @@ https://github.com/j-san/i3-config/blob/master/configure-xrandr.sh
 https://wiki.archlinux.org/index.php/Beginners'_guide
 
 http://jorisvandijk.com/2014/installing-arch-on-a-uefi-gpt-system/
+
+- .Xresources
+
+https://www.reddit.com/r/archlinux/comments/40w3ld/why_is_font_rendering_so_crap_by_default/cyxlida
