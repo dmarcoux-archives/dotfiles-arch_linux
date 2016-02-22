@@ -1,3 +1,10 @@
+################################
+#
+# Dependencies:
+# - ttf-font-awesome
+#
+################################
+
 #################
 # Variables
 #################
@@ -6,10 +13,10 @@
 set $mod Mod4
 
 # Workspaces
-set $WS1 "1:term"
-set $WS2 "2:web"
-set $WS3 "3:media"
-set $WS4 "4:etc"
+set $WS1 "1:  "
+set $WS2 "2:  "
+set $WS3 "3:  "
+set $WS4 "4:  "
 
 #################
 # Colorscheme
@@ -114,9 +121,6 @@ bindsym XF86AudioMute        exec ponymix toggle     && pkill -SIGRTMIN+1 i3bloc
 # Brightness adjustment function keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-
-# Exit i3 #TODO: Use j4-dmenu-desktop instead of dmenu and put this in a script
-bindsym $mod+Shift+Escape exec sh -c '[ $(echo "y/n" | dmenu -sb "#ff6600" -i -p "Exit i3?") = "y" ] && i3-msg exit'
 
 # Restart i3 (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
