@@ -14,6 +14,8 @@ alias sa='systemctl start'
 alias so='systemctl stop'
 alias se='systemctl enable'
 alias sd='systemctl disable'
+alias soff='systemctl poweroff'
+alias sreb='systemctl reboot'
 
 # Safety nets
 # prompt when removing more than 3 files at a time and do not remove '/'
