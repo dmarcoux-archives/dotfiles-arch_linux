@@ -7,7 +7,7 @@ alias history='history 1' # Retrieve all history (useful when using with grep)
 
 # General shortcuts
 alias c=clear
-alias up=upup
+alias up=upup # See functions.zsh for 'upup'
 
 # systemctl shortcurts
 alias sa='systemctl start'
@@ -32,24 +32,29 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # Package management and system upgrades
-alias pacman="sudo pacman"
-alias aura="sudo aura"
-alias sup="pacman -Syu --noconfirm && aura -Akyu --noconfirm"
+alias pacman='sudo pacman'
+alias aura='sudo aura'
+alias sup='pacman -Syu --noconfirm && aura -Akyu --noconfirm'
 
 # Databases
-alias start-psql="systemctl start postgresql.service"
-alias stop-psql="systemctl stop postgresql.service"
+alias sa-psql='systemctl start postgresql.service'
+alias so-psql='systemctl stop postgresql.service'
+alias sa-mysql='systemctl start mysqld.service'
+alias so-mysql='systemctl stop mysqld.service'
 
 # Ruby
-alias b="bundle"
-alias bi="bundle install"
-alias be="bundle exec"
-alias bl="bundle list"
-alias rcop="rubocop"
-alias rcophtml="rubocop -f html -o ./tmp/rubocop.html"
+alias b='bundle'
+alias bi='bundle install'
+alias be='bundle exec'
+alias bl='bundle list'
+alias rcop='rubocop'
+alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 
 # cURL
-alias cpost="curl -v -X POST"
-alias cget="curl -v --get"
-alias cput="curl -v -X PUT"
-alias cdelete="curl -v -X DELETE"
+alias cpost='curl -v -X POST'
+alias cget='curl -v --get'
+alias cput='curl -v -X PUT'
+alias cdelete='curl -v -X DELETE'
+
+# Disable glob operators for certain commands
+alias rake='noglob rake'
