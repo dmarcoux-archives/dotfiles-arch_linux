@@ -1,31 +1,153 @@
 " Use vim settings, rather than vi settings. It must be first because it changes other options
 set nocompatible
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+"-------------------- Mouse & Mappings
 
+" Mouse can be used in all modes
+set mouse=a
+
+" Mappings are recursive, so they will keep evaluating until they hit a dead end (a non-recursive mapping or the last mapping)
+set remap
+
+" Define extra key combinations with a map leader. For example, to save the current file, define: map <leader>w
+let mapleader = ","
+
+"---------- Insert mode
+
+" Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
+
+"---------- Normal mode
+
+" Non-recursive mapping for space to open/close folds
+nnoremap <space> za
+
+"---------- Normal, visual and operator pending modes
+
+" Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-" Paste without auto indentation
-set paste
+" Non-recursive mappings to move around long wrapped lines
+noremap j gj
+noremap k gk
+
+" Non-recursive mapping for leader + Enter to disable text highlighting
+noremap <silent> <leader><cr> :noh<cr>
+
+" Recursive mapping of 0 to the first non-blank character of the line
+map 0 ^
+
+"-------------------- UI Settings
+
+" Enable syntax highlighting
+syntax enable
+
+" Set light solarized colorscheme
+set background=light
+colorscheme solarized
+
+" Show column and line numbers at the bottom
+set ruler
+
+" Always show the status line at the bottom
+set laststatus=2
+
+" Format the status line
+set statusline=\ FILE:\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+
+" Highlight the column and line where the cursor is currently
+set cursorcolumn
+set cursorline
+
+" Show line numbers on the left side
+set number
+
+" Height (in number of lines) of the command bar at the bottom
+set cmdheight=2
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" Minimal number of screen lines to keep above and below the cursor when moving vertically (if possible...)
+set scrolloff=7
+
+" Display tabs and trailing spaces as ·
+set list listchars=tab:\ \ ,trail:·
+
+" Enable word wrapping (only visually, without actually changing the buffer)
+set wrap
+
+" Visually line break on lines of 500 characters (without actually inserting line break)
+set linebreak
+set tw=500
+
+" Don't redraw while executing macros, registers and other commands
+set lazyredraw
+
+"-------------------- Folding
+
+" Enable folding
+set foldenable
+
+" Folding based on indentation
+set foldmethod=indent
+
+" When opening a file, open folds up to 10 levels deep
+set foldlevelstart=10
+
+" Folds have a maximum of 10 levels deep
+set foldnestmax=10
+
+"-------------------- Search Settings
+
+" Ignore case when searching
+set ignorecase
+
+" Highlight search results
+set hlsearch
+
+" Match search pattern while typing
+set incsearch
+
+"-------------------- Space, Tabs & Indentation
+
+" Use spaces instead of tabs
+set expandtab
+
+" 1 tab is always converted to 2 spaces
+set tabstop=2
+
+" When indenting with commands '<<' and '>>', it will add/remove 2 spaces
+set shiftwidth=2
+
+" When using <Tab> or <BS> (Backspace), it will indent itself with surrounding lines
+set smarttab
+
+" Copy indent from current line when starting a new line
+set autoindent
+
+" An indent is automatically inserted:
+"	- After a line ending in '{'.
+"	- After a line starting with a keyword from this list: if, else, while, do, for, switch
+"	- Before a line starting with '}' (only with the 'O' command).
+set smartindent
+
+"-------------------- Misc (TODO: CLEAN UP & ADD BETTER COMMENTS)
 
 " Hide buffers, not close them
 set hidden
 
 " Sets how many lines of history VIM has to remember
-set history=700
-
-" Mouse can be used in all modes
-set mouse=a
+set history=1000
 
 " Link to the system clipboard
 set clipboard^=unnamedplus
@@ -37,9 +159,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
-
 " Lazy file name tab completion
 set wildmode=longest,list,full
 
@@ -48,70 +167,20 @@ set wildmenu
 set wildignorecase
 set wildignore=*.o,*~,*.pyc,.git\*,.hg\*,.svn\*
 
-" Always show current position
-set ruler
-
-" Always show current column
-set cursorcolumn
-
-" Show line numbers
-set number
-
-" Height of the command bar
-set cmdheight=2
-
 " Configure backspace so it acts as it should act
 set backspace=indent,eol,start
-
-" Wrap long lines
-set wrap
 
 " Left and right movements will go to the previous or next line when at start or end of line
 set whichwrap+=<,>,h,l
 
-" Ignore case when searching
-set ignorecase
-
-" When searching try to be smart about cases
-set smartcase
-
-" Highlight search results
-set hlsearch
-
-" Makes search act like search in modern browsers
-set incsearch
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
 " For regular expressions turn magic on
 set magic
-
-" Show matching brackets when text indicator is over them
-set showmatch
-
-" How many tenths of a second to blink when matching brackets
-set mat=2
 
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-
-" Add a bit extra margin to the left
-set foldcolumn=1
-
-" Enable syntax highlighting
-syntax enable
-set background=light
-colorscheme solarized
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -124,89 +193,9 @@ set nobackup
 set nowb
 set noswapfile
 
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
-
-" Linebreak on 500 characters
-set lbr
-set tw=500
-
-set ai "Auto indent
-set si "Smart indent
-
-" Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
-
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
-
-" Return to last edit position when opening files
-autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-" Remember info about open buffers on close
-set viminfo^=%
-
-" Convert all tabs to spaces when opening modifiable files
-autocmd BufReadPost * if &modifiable | retab | endif
-
-" Always show the status line
-set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-" Remap VIM 0 to first non-blank character
-map 0 ^
+"-------------------- Functions
 
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
-
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("Ack \"" . l:pattern . "\" " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
