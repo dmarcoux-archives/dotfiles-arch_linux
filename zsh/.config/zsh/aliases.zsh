@@ -51,7 +51,7 @@ alias rcop='rubocop'
 alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 
 # cURL
-alias cjson='curl -H "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
+alias curljson='curl -H "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
 
 # Disable glob operators for certain commands
 alias rake='noglob rake'
