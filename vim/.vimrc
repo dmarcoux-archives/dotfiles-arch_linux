@@ -102,6 +102,10 @@ syntax enable
 set background=light
 colorscheme solarized
 
+" Set the title of the terminal to the file name (up to maximum 70 characters)
+set title
+set titlestring=VIM:\ %F titlelen=70
+
 " Show column and line numbers at the bottom
 set ruler
 
