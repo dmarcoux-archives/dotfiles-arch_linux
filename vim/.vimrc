@@ -70,8 +70,8 @@ noremap k gk
 " Non-recursive mapping for leader + Enter to disable text highlighting
 noremap <silent> <leader><CR> :noh<CR>
 
-" Non-recursive mapping for leader + a to open the plugin ag.vim
-noremap <leader>a :Ag
+" Non-recursive mapping for leader + a to search with ag (from the plugin ag.vim)
+noremap <leader>a :Ag<Space>
 
 " Recursive mapping of 0 to the first non-blank character of the line
 map 0 ^
