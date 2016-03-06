@@ -10,7 +10,7 @@ set mouse=a
 set remap
 
 " Define extra key combinations with a map leader. For example, to save the current file, define: map <leader>w
-let mapleader = ","
+let mapleader=","
 
 " Backspace can be used over everything in insert mode
 set backspace=indent,eol,start
@@ -38,16 +38,24 @@ nnoremap <Space> za
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 
-" Non-recursive mapping to go quicker in command mode
-nnoremap ; :
+" Non-recursive mappings for Ctrl + J and Ctrl + K to move the current line(s)
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
 
 "---------- Visual mode
 
-" Non-recursive mappings for Tab and Shift+Tab to indent/unindent and keep the visual selection after indenting
+" Non-recursive mappings for Tab and Shift + Tab to indent/unindent and keep the visual selection after indenting
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 "---------- Normal, visual and operator pending modes
+
+" Non-recursive mapping to go quicker in command mode
+noremap ; :
 
 " Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 noremap <Up> <NOP>
@@ -60,7 +68,7 @@ noremap j gj
 noremap k gk
 
 " Non-recursive mapping for leader + Enter to disable text highlighting
-noremap <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader><CR> :noh<CR>
 
 " Non-recursive mapping for leader + a to open the plugin ag.vim
 noremap <leader>a :Ag
@@ -69,6 +77,18 @@ noremap <leader>a :Ag
 map 0 ^
 
 "-------------------- Command mode
+
+" Non-recursive abbreviations for common typos when saving/quiting
+cnoreabbrev W! w!
+cnoreabbrev W w
+cnoreabbrev Q! q!
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+
+" Non-recursive abbreviation for ag.vim
+cnoreabbrev ag Ag
 
 " When forgetting to sudo before editing a file which requires root privileges, use w!! instead of w! to save changes
 cmap w!! w !sudo tee % >/dev/null
@@ -196,6 +216,8 @@ set autoread
 
 " Set utf8 as standard encoding
 set encoding=utf8
+set fileencoding=utf-8
+set fileencodings=utf-8
 
 " Use Unix as the standard file format
 set fileformats=unix,dos,mac
@@ -216,7 +238,7 @@ set wildmenu
 set wildignorecase
 
 " Ignore these files
-set wildignore=*.o,*~,*.pyc,.git\*,.hg\*,.svn\*
+set wildignore+=*~,.git\*,.hg\*,.svn\*
 
 " List all matches without completing
 set wildmode=longest,list,full
@@ -231,15 +253,29 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 "-------------------- CtrlP plugin settings
 
 " Order matching files top to bottom
-let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_match_window='bottom,order:ttb'
+
+" Files to ignore when matching
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 
 " Use ag to find files
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom_ignore +' -g ""'
+
+"-------------------- UltiSnips plugin settings
+
+" Press / to expand trigger
+let g:UltiSnipsExpandTrigger="/"
+
+" Press Tab and Shift+Tab to move back and forth inside snippet tabstops
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 "-------------------- Plugins
 
 " Start vim-plug (Vim plugin manager)
 call plug#begin('~/.vim/plugged')
+
+"---------- Search
 
 " Use ag, a code searching tool
 Plug 'https://github.com/rking/ag.vim'
@@ -247,8 +283,28 @@ Plug 'https://github.com/rking/ag.vim'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
-" Provide mappings to easily delete, change and add surroundings in pairs. Surroundings are parentheses, brackets, quotes, XML tags, and more.
+"---------- Efficiency (Mappings & Movement)
+
+" Motion on speed
+Plug 'https://github.com/easymotion/vim-easymotion'
+
+" Comment stuff out
+Plug 'https://github.com/tpope/vim-commentary'
+
+" Easily delete, change and add surroundings. Surroundings are parentheses, brackets, quotes, XML tags and more
 Plug 'https://github.com/tpope/vim-surround'
+
+"---------- Completion (Code & Snippets)
+
+" Close parentheses and square/curly brackets automatically after pressing Enter
+Plug 'https://github.com/rstacruz/vim-closer'
+
+" End certain structures automatically. In Ruby, this means adding end after if, do, def and several other keywords
+Plug 'https://github.com/tpope/vim-endwise'
+
+" Snippets engine and the actual snippets
+Plug 'https://github.com/SirVer/ultisnips'
+Plug 'https://github.com/honza/vim-snippets'
 
 " Add plugins to &runtimepath
 call plug#end()
