@@ -102,11 +102,7 @@ Bits and chunks of my config files come from these sources. Thanks to the people
 
 http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
 
-- vim
-
-https://github.com/amix/vimrc
-
-- zsh, vim, GNU Stow usage
+- zsh and GNU Stow usage
 
 https://github.com/xero/dotfiles
 
