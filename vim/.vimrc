@@ -254,26 +254,6 @@ function! TrimWhiteSpace()
 endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
 
-"-------------------- CtrlP plugin settings
-
-" Order matching files top to bottom
-let g:ctrlp_match_window='bottom,order:ttb'
-
-" Files to ignore when matching
-let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
-
-" Use ag to find files
-let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom_ignore +' -g ""'
-
-"-------------------- UltiSnips plugin settings
-
-" Press / to expand trigger
-let g:UltiSnipsExpandTrigger="/"
-
-" Press Tab and Shift+Tab to move back and forth inside snippet tabstops
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
 "-------------------- Plugins
 
 " Start vim-plug (Vim plugin manager)
@@ -312,3 +292,23 @@ Plug 'https://github.com/honza/vim-snippets'
 
 " Add plugins to &runtimepath
 call plug#end()
+
+"-------------------- CtrlP plugin settings
+
+" Order matching files top to bottom
+let g:ctrlp_match_window='bottom,order:ttb'
+
+" Files to ignore when matching
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+
+" Use ag to find files
+let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom_ignore +' -g ""'
+
+"-------------------- UltiSnips plugin settings
+
+" Press / to expand trigger
+let g:UltiSnipsExpandTrigger="/"
+
+" Press Tab and Shift+Tab to move back and forth inside snippet tabstops
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
