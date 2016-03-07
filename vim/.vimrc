@@ -34,19 +34,15 @@ inoremap <S-Tab> <C-D>
 " Non-recursive mapping for Space to open/close folds
 nnoremap <Space> za
 
-" Non-recursive mappings for Tab and Shift+Tab to indent/unindent
-nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move the current line(s)
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-"---------- Visual mode
+" Non-recursive mapping for > and < to indent/unindent quickly
+nnoremap > >>
+nnoremap < <<
 
-" Non-recursive mappings for Tab and Shift + Tab to indent/unindent and keep the visual selection after indenting
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+"---------- Visual mode
 
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
 vnoremap <C-j> :m '>+1<CR>gv=gv
@@ -72,6 +68,10 @@ noremap <silent> <leader><CR> :noh<CR>
 
 " Non-recursive mapping for leader + a to search with ag (from the plugin ag.vim)
 noremap <leader>a :Ag<Space>
+
+" Non-recursive mapping for leader + b to list buffers and then be able to enter a buffer's number/name to switch to it
+" Quite useful with the plugin ctrlp.vim
+noremap <leader>b :buffers<CR>:buffer<Space>
 
 " Recursive mapping of 0 to the first non-blank character of the line
 map 0 ^
@@ -293,9 +293,9 @@ Plug 'https://github.com/honza/vim-snippets'
 " Add plugins to &runtimepath
 call plug#end()
 
-"-------------------- CtrlP plugin settings
+"-------------------- ctrlp.vim plugin settings
 
-" Order matching files top to bottom
+" Display match window at the bottom and order matching files top to bottom
 let g:ctrlp_match_window='bottom,order:ttb'
 
 " Files to ignore when matching
@@ -306,8 +306,8 @@ let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom
 
 "-------------------- UltiSnips plugin settings
 
-" Press / to expand trigger
-let g:UltiSnipsExpandTrigger="/"
+" Press Tab to expand trigger
+let g:UltiSnipsExpandTrigger="<Tab>"
 
 " Press Tab and Shift+Tab to move back and forth inside snippet tabstops
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
