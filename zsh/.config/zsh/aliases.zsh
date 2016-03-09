@@ -7,7 +7,6 @@ alias history='history 1' # Retrieve all history (useful when using with grep)
 
 # General shortcuts
 alias c=clear
-alias up=upup # See functions.zsh for 'upup'
 
 # systemctl shortcurts
 alias sa='systemctl start'
@@ -45,7 +44,7 @@ alias so-mysql='systemctl stop mysqld.service'
 # Ruby
 alias b='bundle'
 alias bi='bundle install'
-alias be='bundle exec'
+alias be='noglob bundle exec' # Disable zsh glob operators with noglob (mostly for rake)
 alias bl='bundle list'
 alias rcop='rubocop'
 alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
@@ -53,5 +52,6 @@ alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 # cURL
 alias curljson='curl -H "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
 
-# Disable glob operators for certain commands
-alias rake='noglob rake'
+# Docker
+alias d='docker'
+alias di='docker images'
