@@ -38,10 +38,6 @@ nnoremap <Space> za
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-" Non-recursive mapping for > and < to indent/unindent quickly
-nnoremap > >>
-nnoremap < <<
-
 "---------- Visual mode
 
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
