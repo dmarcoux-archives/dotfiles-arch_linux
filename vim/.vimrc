@@ -69,9 +69,8 @@ noremap <silent> <leader><CR> :noh<CR>
 " Non-recursive mapping for leader + a to search with ag (from the plugin ag.vim)
 noremap <leader>a :Ag<Space>
 
-" Non-recursive mapping for leader + b to list buffers and then be able to enter a buffer's number/name to switch to it
-" Quite useful with the plugin ctrlp.vim
-noremap <leader>b :buffers<CR>:buffer<Space>
+" Non-recursive mapping for Ctrl + B to start ctrlp.vim in buffer mode, which is handy to switch between opened buffers
+noremap <C-B> :CtrlPBuffer<CR>
 
 " Recursive mapping of 0 to the first non-blank character of the line
 map 0 ^
@@ -306,6 +305,9 @@ let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 
 " Use ag to find files
 let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom_ignore +' -g ""'
+
+" When opening a file, if it's already open in a window somewhere, try to jump to it instead of opening a new instance
+let g:ctrlp_switch_buffer='Et'
 
 "-------------------- UltiSnips plugin settings
 
