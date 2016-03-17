@@ -267,6 +267,9 @@ Plug 'https://github.com/rking/ag.vim'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
+" Use ranger, a File Manager, as the File Chooser
+Plug 'https://github.com/renyard/vim-rangerexplorer'
+
 "---------- Efficiency (Mappings & Movement)
 
 " Motion on speed

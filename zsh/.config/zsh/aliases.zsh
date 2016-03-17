@@ -3,10 +3,7 @@ alias ls='ls -a --color=auto' # Show all files and color the output
 alias mkdir='mkdir -pv' # No error when directory already exists, more feedback
 alias ping='ping -c 3' # Ping with 3 packets
 alias wget='wget -c' # Always resume download if partial file found
-alias history='history 1' # Retrieve all history (useful when using with grep)
-
-# General shortcuts
-alias c=clear
+alias history='history 1' # Retrieve all history (useful when using piping the output to grep/ag/whatever)
 
 # systemctl shortcurts
 alias sa='systemctl start'
