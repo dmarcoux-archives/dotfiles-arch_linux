@@ -114,8 +114,9 @@ set statusline=\ FILE:\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ 
 set cursorcolumn
 set cursorline
 
-" Show line numbers on the left side
+" Show the line number where the cursor is located and around it, show relative line numbers
 set number
+set relativenumber
 
 " Height (in number of lines) of the command bar at the bottom
 set cmdheight=2
@@ -127,7 +128,7 @@ set showmatch
 set mat=2
 
 " Minimal number of screen lines to keep above and below the cursor when moving vertically (if possible...)
-set scrolloff=7
+set scrolloff=10
 
 " Display tabs and trailing spaces as ·
 set list listchars=tab:\ \ ,trail:·
