@@ -263,13 +263,10 @@ Plug 'https://github.com/rking/ag.vim'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
-" Use ranger, a File Manager, as the File Chooser
-Plug 'https://github.com/renyard/vim-rangerexplorer'
-
 "---------- Efficiency (Mappings & Movement)
 
-" Motion on speed
-Plug 'https://github.com/easymotion/vim-easymotion'
+" Remaps . in a way that plugins can tap into it
+Plug 'https://github.com/tpope/vim-repeat'
 
 " Comment stuff out
 Plug 'https://github.com/tpope/vim-commentary'
@@ -288,6 +285,11 @@ Plug 'https://github.com/tpope/vim-endwise'
 " Snippets engine and the actual snippets
 Plug 'https://github.com/SirVer/ultisnips'
 Plug 'https://github.com/honza/vim-snippets'
+
+"---------- Ruby
+
+" Configuration files for Ruby
+Plug 'https://github.com/vim-ruby/vim-ruby'
 
 " Add plugins to &runtimepath
 call plug#end()
