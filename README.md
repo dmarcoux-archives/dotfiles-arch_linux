@@ -1,4 +1,4 @@
-```
+``
 @dmarcoux/dotfiles
 
 My Linux config files
@@ -46,13 +46,13 @@ Install packages from AUR
 
 ```aura -A $(< pkgs/aur-pkgs.txt)```
 
-Install *xyz* in $HOME (for example, vim)
+Install *xyz* in $HOME (for example, neovim)
 
-```stow vim```
+```stow neovim```
 
-Uninstall *xyz* from $HOME (for example, vim)
+Uninstall *xyz* from $HOME (for example, neovim)
 
-```stow -D vim```
+```stow -D neovim```
 
 Install *abc* in a specific directory (for example, *etc* in the directory `/`)
 
@@ -105,10 +105,6 @@ http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfile
 - zsh and GNU Stow usage
 
 https://github.com/xero/dotfiles
-
-- Solarized theme for vim
-
-https://github.com/altercation/vim-colors-solarized
 
 - Solarized theme for termite
 
