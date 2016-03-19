@@ -170,19 +170,6 @@ set incsearch
 
 "-------------------- Space, Tabs & Indentation
 
-" Use spaces instead of tabs
-set expandtab
-
-" 1 tab is always converted to 2 spaces
-set tabstop=2
-set softtabstop=2
-
-" When indenting with commands '<<' and '>>', it will add/remove 2 spaces
-set shiftwidth=2
-
-" When using <Tab> or <BS> (Backspace), it will indent itself with surrounding lines
-set smarttab
-
 " Copy indent from current line when starting a new line
 set autoindent
 
@@ -263,7 +250,7 @@ Plug 'https://github.com/rking/ag.vim'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
-"---------- Efficiency (Mappings & Movement)
+"---------- Efficiency
 
 " Remaps . in a way that plugins can tap into it
 Plug 'https://github.com/tpope/vim-repeat'
@@ -274,7 +261,10 @@ Plug 'https://github.com/tpope/vim-commentary'
 " Easily delete, change and add surroundings. Surroundings are parentheses, brackets, quotes, XML tags and more
 Plug 'https://github.com/tpope/vim-surround'
 
-"---------- Completion (Code & Snippets)
+" Try to automatically adjust 'shiftwidth' and 'expandtab' based on the current file or its parents
+Plug 'https://github.com/tpope/vim-sleuth'
+
+"---------- Completion
 
 " Close parentheses and square/curly brackets automatically after pressing Enter
 Plug 'https://github.com/rstacruz/vim-closer'
