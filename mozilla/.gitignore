@@ -3,6 +3,5 @@
 *
 
 !.gitignore
-!.mozilla/plugins/libflashplayer.so
 !.mozilla/firefox/profiles.ini
 !.mozilla/firefox/profile.default/user.js
