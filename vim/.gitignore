@@ -1,3 +1,0 @@
-# I don't want to keep the history of netrw and files of installed plugins
-.vim/.netrwhist
-.vim/plugged/*

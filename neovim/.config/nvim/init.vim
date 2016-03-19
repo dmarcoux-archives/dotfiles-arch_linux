@@ -1,19 +1,10 @@
-" Use vim settings, rather than vi settings. It must be first because it changes other options
-set nocompatible
-
-"-------------------- Mouse & Mappings
-
-" Mouse can be used in all modes
-set mouse=a
+"-------------------- Mappings
 
 " Mappings are recursive, so they will keep evaluating until they hit a dead end (a non-recursive mapping or the last mapping)
 set remap
 
 " Define extra key combinations with a map leader. For example, to save the current file, define: map <leader>w
 let mapleader=","
-
-" Backspace can be used over everything in insert mode
-set backspace=indent,eol,start
 
 " Left and right movements will go to the previous or next line when at start or end of line
 set whichwrap+=<,>,h,l
@@ -93,19 +84,15 @@ cmap w!! w !sudo tee % >/dev/null
 " Enable syntax highlighting
 syntax enable
 
-" Set light solarized colorscheme
-set background=light
-colorscheme solarized
+" Set flattened light colorscheme (solarized light without bullshit)
+colorscheme flattened_light
 
 " Set the title of the terminal to the file name (up to maximum 70 characters)
 set title
-set titlestring=VIM:\ %F titlelen=70
+set titlestring=NEOVIM:\ %F titlelen=70
 
 " Show column and line numbers at the bottom
 set ruler
-
-" Always show the status line at the bottom
-set laststatus=2
 
 " Format the status line
 set statusline=\ FILE:\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -131,10 +118,10 @@ set mat=2
 set scrolloff=10
 
 " Display tabs and trailing spaces as ·
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:\>·,trail:·
 
-" Enable word wrapping (only visually, without actually changing the buffer)
-set wrap
+" Disable word wrapping
+set nowrap
 
 " Visually line break on lines of 500 characters (without actually inserting line break)
 set linebreak
@@ -143,40 +130,17 @@ set tw=500
 " Don't redraw while executing macros, registers and other commands
 set lazyredraw
 
-"-------------------- Folding
-
-" Enable folding
-set foldenable
-
-" Folding based on syntax
-set foldmethod=syntax
-
-" When opening a file, open folds up to 10 levels deep
-set foldlevelstart=10
-
-" Folds have a maximum of 10 levels deep
-set foldnestmax=10
-
 "-------------------- Search Settings
 
 " Ignore case when searching
 set ignorecase
 
-" Highlight search results
-set hlsearch
-
-" Match search pattern while typing
-set incsearch
-
 "-------------------- Space, Tabs & Indentation
 
-" Copy indent from current line when starting a new line
-set autoindent
-
 " An indent is automatically inserted:
-"	- After a line ending in '{'.
-"	- After a line starting with a keyword from this list: if, else, while, do, for, switch
-"	- Before a line starting with '}' (only with the 'O' command).
+"- After a line ending in '{'.
+"- After a line starting with a keyword from this list: if, else, while, do, for, switch
+"- Before a line starting with '}' (only with the 'O' command).
 set smartindent
 
 "-------------------- History, Backup & System
@@ -198,11 +162,7 @@ set clipboard^=unnamedplus
 " Enable loading of plugins, settings, key mappings based on file types
 filetype plugin indent on
 
-" Read again files which were changed outside of vim
-set autoread
-
 " Set utf8 as standard encoding
-set encoding=utf8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
@@ -218,9 +178,6 @@ set noswapfile
 
 "-------------------- Wildmenu
 
-" Enable wildmenu, the command-line completion menu
-set wildmenu
-
 " Ignore case
 set wildignorecase
 
@@ -230,17 +187,15 @@ set wildignore+=*~,.git\*,.hg\*,.svn\*
 " List all matches without completing
 set wildmode=longest,list,full
 
-"-------------------- Functions
+"-------------------- Autocommands
 
-function! TrimWhiteSpace()
-    %s/\s\+$//e
-endfunction
-autocmd BufWritePre * :call TrimWhiteSpace()
+" Remove all trailing whitespaces right before saving
+autocmd BufWritePre * :%s/\s\+$//e
 
 "-------------------- Plugins
 
-" Start vim-plug (Vim plugin manager)
-call plug#begin('~/.vim/plugged')
+" Start vim-plug (Neovim plugin manager)
+call plug#begin('~/.config/nvim/plugged')
 
 "---------- Search
 
