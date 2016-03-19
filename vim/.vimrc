@@ -294,6 +294,12 @@ Plug 'https://github.com/vim-ruby/vim-ruby'
 " Add plugins to &runtimepath
 call plug#end()
 
+"-------------------- ag.vim plugin settings
+
+" Always start searching from the project root
+" (the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs)
+let g:ag_working_path_mode="r"
+
 "-------------------- ctrlp.vim plugin settings
 
 " Display match window at the bottom and order matching files top to bottom
