@@ -84,8 +84,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Enable syntax highlighting
 syntax enable
 
-" Set flattened light colorscheme (solarized light without bullshit)
-colorscheme flattened_light
 
 " Set the title of the terminal to the file name (up to maximum 70 characters)
 set title
@@ -236,6 +234,11 @@ Plug 'https://github.com/honza/vim-snippets'
 " Configuration files for Ruby
 Plug 'https://github.com/vim-ruby/vim-ruby'
 
+"---------- Colorscheme
+
+" Solarized light and dark colorscheme
+Plug 'https://github.com/altercation/vim-colors-solarized'
+
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -267,3 +270,9 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 " Press Tab and Shift+Tab to move back and forth inside snippet tabstops
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+"-------------------- vim-colors-solarized plugin settings
+
+" Set solarized light colorscheme
+set background=light
+colorscheme solarized
