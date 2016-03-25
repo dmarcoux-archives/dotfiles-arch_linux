@@ -1,0 +1,2 @@
+# ag ignores anything matching this
+.git/
