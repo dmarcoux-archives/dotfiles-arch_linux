@@ -1,4 +1,4 @@
-# ----- General
+#----- General
 
 # Quicker than cd ..; cd ...; etc...
 #   ~$ cd ~/dir/example/folder
@@ -7,7 +7,7 @@
 # Credits: http://www.bashoneliners.com/oneliners/oneliner/220/
 up() { DEEP=$1; [ -z "${DEEP}" ] && { DEEP=1; }; for i in $(seq 1 ${DEEP}); do cd ../; done; }
 
-# ----- Docker
+#----- Docker
 
 # Remove all non-running containers
 drm() { docker rm $(docker ps -a -q); }
