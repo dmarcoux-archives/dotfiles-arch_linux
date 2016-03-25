@@ -1,3 +1,103 @@
+"-------------------- Plugins
+
+"---------- Plugins Initialization
+
+" Start vim-plug (Neovim plugin manager)
+call plug#begin('~/.config/nvim/plugged')
+
+"---------- Search Plugins
+
+" Use ag, a code searching tool
+Plug 'https://github.com/rking/ag.vim'
+
+" Full path fuzzy file, buffer, mru, tag, ... finder
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+
+"---------- Efficiency Plugins
+
+" Remaps . in a way that plugins can tap into it
+Plug 'https://github.com/tpope/vim-repeat'
+
+" Comment stuff out
+Plug 'https://github.com/tpope/vim-commentary'
+
+" Easily delete, change and add surroundings. Surroundings are parentheses, brackets, quotes, XML tags and more
+Plug 'https://github.com/tpope/vim-surround'
+
+" Try to automatically adjust 'shiftwidth' and 'expandtab' based on the current file or its parents
+Plug 'https://github.com/tpope/vim-sleuth'
+
+"---------- Completion Plugins
+
+" Close parentheses and square/curly brackets automatically after pressing Enter
+Plug 'https://github.com/rstacruz/vim-closer'
+
+" End certain structures automatically. In Ruby, this means adding end after if, do, def and several other keywords
+Plug 'https://github.com/tpope/vim-endwise'
+
+" Snippets engine and the actual snippets
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'https://github.com/SirVer/ultisnips' | Plug 'https://github.com/honza/vim-snippets'
+
+"---------- Ruby Plugins
+
+" Configuration files for Ruby
+Plug 'https://github.com/vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+"---------- Go Plugins
+
+" Go development with pre-defined sensible defaults
+Plug 'https://github.com/fatih/vim-go', { 'for': 'go' }
+
+"---------- Colorscheme Plugins
+
+" Solarized light and dark colorscheme
+Plug 'https://github.com/altercation/vim-colors-solarized'
+
+"---------- Loading Plugins
+
+" Add plugins to &runtimepath
+call plug#end()
+
+"-------------------- Plugins Settings
+
+"---------- ag.vim
+
+" Always start searching from the project root
+" (the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs)
+let g:ag_working_path_mode="r"
+
+"---------- ctrlp.vim
+
+" Display match window at the bottom and order matching files top to bottom
+let g:ctrlp_match_window='bottom,order:ttb'
+
+" Use ag to find files
+" %s -> Target directory
+" -l -> display matching files, not matching lines
+" --nocolor -> disable color printing
+" --hidden -> match hidden files
+" -g -> print matching filenames
+let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
+
+" When opening a file, if it's already open in a window somewhere, try to jump to it instead of opening a new instance
+let g:ctrlp_switch_buffer='Et'
+
+"---------- UltiSnips
+
+" Press Tab to expand trigger
+let g:UltiSnipsExpandTrigger="<Tab>"
+
+" Press Tab and Shift+Tab to move back and forth inside snippet tabstops
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+"---------- vim-colors-solarized
+
+" Set solarized light colorscheme
+set background=light
+colorscheme solarized
+
 "-------------------- Mappings
 
 " Mappings are recursive, so they will keep evaluating until they hit a dead end (a non-recursive mapping or the last mapping)
@@ -9,7 +109,7 @@ let mapleader=","
 " Left and right movements will go to the previous or next line when at start or end of line
 set whichwrap+=<,>,h,l
 
-"---------- Insert mode
+"---------- Insert Mode
 
 " Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 inoremap <Up> <NOP>
@@ -20,7 +120,7 @@ inoremap <Right> <NOP>
 " Non-recursive mapping for Shift+Tab to unindent
 inoremap <S-Tab> <C-D>
 
-"---------- Normal mode
+"---------- Normal Mode
 
 " Non-recursive mapping for Space to open/close folds
 nnoremap <Space> za
@@ -29,13 +129,13 @@ nnoremap <Space> za
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-"---------- Visual mode
+"---------- Visual Mode
 
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"---------- Normal, visual and operator pending modes
+"---------- Normal, Visual and Operator Pending Modes
 
 " Non-recursive mapping to go quicker in command mode
 noremap ; :
@@ -62,7 +162,7 @@ noremap <C-B> :CtrlPBuffer<CR>
 " Recursive mapping of 0 to the first non-blank character of the line
 map 0 ^
 
-"-------------------- Command mode
+"-------------------- Command Mode
 
 " Non-recursive abbreviations for common typos when saving/quiting
 cnoreabbrev W! w!
@@ -189,90 +289,3 @@ set wildmode=longest,list,full
 
 " Remove all trailing whitespaces right before saving
 autocmd BufWritePre * :%s/\s\+$//e
-
-"-------------------- Plugins
-
-" Start vim-plug (Neovim plugin manager)
-call plug#begin('~/.config/nvim/plugged')
-
-"---------- Search
-
-" Use ag, a code searching tool
-Plug 'https://github.com/rking/ag.vim'
-
-" Full path fuzzy file, buffer, mru, tag, ... finder
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-
-"---------- Efficiency
-
-" Remaps . in a way that plugins can tap into it
-Plug 'https://github.com/tpope/vim-repeat'
-
-" Comment stuff out
-Plug 'https://github.com/tpope/vim-commentary'
-
-" Easily delete, change and add surroundings. Surroundings are parentheses, brackets, quotes, XML tags and more
-Plug 'https://github.com/tpope/vim-surround'
-
-" Try to automatically adjust 'shiftwidth' and 'expandtab' based on the current file or its parents
-Plug 'https://github.com/tpope/vim-sleuth'
-
-"---------- Completion
-
-" Close parentheses and square/curly brackets automatically after pressing Enter
-Plug 'https://github.com/rstacruz/vim-closer'
-
-" End certain structures automatically. In Ruby, this means adding end after if, do, def and several other keywords
-Plug 'https://github.com/tpope/vim-endwise'
-
-" Snippets engine and the actual snippets
-Plug 'https://github.com/SirVer/ultisnips'
-Plug 'https://github.com/honza/vim-snippets'
-
-"---------- Ruby
-
-" Configuration files for Ruby
-Plug 'https://github.com/vim-ruby/vim-ruby'
-
-"---------- Colorscheme
-
-" Solarized light and dark colorscheme
-Plug 'https://github.com/altercation/vim-colors-solarized'
-
-" Add plugins to &runtimepath
-call plug#end()
-
-"-------------------- ag.vim plugin settings
-
-" Always start searching from the project root
-" (the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs)
-let g:ag_working_path_mode="r"
-
-"-------------------- ctrlp.vim plugin settings
-
-" Display match window at the bottom and order matching files top to bottom
-let g:ctrlp_match_window='bottom,order:ttb'
-
-" Files to ignore when matching
-let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
-
-" Use ag to find files
-let g:ctrlp_user_command='ag %s -l --nocolor --hidden --ignore '+ g:ctrlp_custom_ignore +' -g ""'
-
-" When opening a file, if it's already open in a window somewhere, try to jump to it instead of opening a new instance
-let g:ctrlp_switch_buffer='Et'
-
-"-------------------- UltiSnips plugin settings
-
-" Press Tab to expand trigger
-let g:UltiSnipsExpandTrigger="<Tab>"
-
-" Press Tab and Shift+Tab to move back and forth inside snippet tabstops
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
-"-------------------- vim-colors-solarized plugin settings
-
-" Set solarized light colorscheme
-set background=light
-colorscheme solarized
