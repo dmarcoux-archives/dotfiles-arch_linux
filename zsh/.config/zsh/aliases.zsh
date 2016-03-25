@@ -43,7 +43,7 @@ alias b='bundle'
 alias bi='bundle install'
 alias be='noglob bundle exec' # Disable zsh glob operators with noglob (mostly for rake)
 alias bl='bundle list'
-alias rcop='rubocop'
+alias -g rcop='rubocop' # Global alias
 alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 
 #----- cURL
