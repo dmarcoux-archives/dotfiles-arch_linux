@@ -49,6 +49,6 @@ alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 #----- cURL
 alias curljson='curl -H "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
 
-#----- Docker
-alias d='docker'
-alias di='docker images'
+#----- Docker and Docker Compose
+alias doc='docker'
+alias doccom='docker-compose'
