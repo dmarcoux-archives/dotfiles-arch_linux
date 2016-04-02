@@ -203,6 +203,11 @@ $ stow -t / etc
 $ stow neovim # An example...
 ```
 
+Copy the boot loader configuration from my dotfiles
+```
+$ sudo cp boot/boot/loader/entries/arch.conf /boot/loader/entries/
+```
+
 Generate the locales
 ```
 $ locale-gen
@@ -220,7 +225,7 @@ $ pacman --force --noconfirm -S $(< pkgs/pkgs.txt)
 
 Reset my dotfiles to their original state (since some files might have been overwritten by `pacman --force`)
 ```
-git checkout etc/
+$ git checkout etc/
 ```
 
 Set the timezone (make sure to have the package `ntp`)
@@ -235,16 +240,24 @@ $ chsh -s /usr/bin/zsh
 ```
 
 Install aura (if I need packages from AUR)
-
-```bash scripts/install_aura.sh```
+```
+$ bash scripts/install_aura.sh
+```
 
 Install packages from AUR
-
-```aura --noconfirm -A $(< pkgs/aur-pkgs.txt)```
+```
+$ aura --noconfirm -A $(< pkgs/aur-pkgs.txt)
+```
 
 Log out of `root` and log back in as the user created earlier
 ```
-exit
+$ exit
+```
+
+Enable services and start them if needed
+```
+# Example
+$ systemctl enable NetworkManager --now
 ```
 
 TODO:
