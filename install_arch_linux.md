@@ -42,16 +42,8 @@ Hex code or GUID: EF00
 ```
 
 ```
-# sda2: / (20G)
+# sda2: /
 Partition number: 2
-First sector: (press Enter)
-Last sector: +20G
-Hex code or GUID: 8300
-```
-
-```
-# sda3: /home (All the remaining space)
-Partition number: 3
 First sector: (press Enter)
 Last sector: (press Enter)
 Hex code or GUID: 8300
@@ -68,19 +60,13 @@ Partition number: 2
 Enter name: /
 ```
 
-```
-Partition number: 3
-Enter name: /home
-```
-
 Show the partition table
 ```
 p
 
 Number  Start (sector)    End (sector)  Size       Code  Name
-   1            2048          411647   200.0 MiB   EF00  /boot
-   2          411648        31868927   15.0 GiB    8300  /
-   3        31868928       234441614   96.6 GiB    8300  /home
+   1            2048         2099199   1024.0 MiB  EF00  /boot
+   2          2099199      234441614   110.8 GiB   8300  /
 ```
 
 If everything looks fine, write the changes and quit
@@ -90,32 +76,30 @@ w
 
 ### Filesystems
 
-Create filesystems
+Create the filesystems
 ```
-$ mkfs.ext4 /dev/sda2
-$ mkfs.ext4 /dev/sda3
 $ mkfs.fat -F32 /dev/sda1
+$ mkfs.btrfs /dev/sda2
 ```
 
-Mount the filesystems
+Mount the filesystems (look [here](https://btrfs.wiki.kernel.org/index.php/Mount_options) for details on mount options)
 ```
-$ mount /dev/sda2 /mnt
+$ mount -o defaults,relatime,discard,ssd,space_cache,autodefrag,compress=lzo /dev/sda2 /mnt
 $ mkdir /mnt/boot
-$ mkdir /mnt/home
 $ mount /dev/sda1 /mnt/boot
-$ mount /dev/sda3 /mnt/home
 ```
 
 ### System installation
 
 Install the system
 ```
-$ pacstrap /mnt base base-devel
+$ pacstrap -i /mnt base base-devel btrfs-progs
 ```
 
 Set up fstab
 ```
 $ genfstab -U -p /mnt >> /mnt/etc/fstab
+$ cat /mnt/etc/fstab # To check if the btrfs filesystem is properly configured
 ```
 
 ### System configuration
@@ -209,10 +193,14 @@ If needed, select the branch specific to this computer. Otherwise, stay on `mast
 $ git checkout MY_BRANCH_NAME
 ```
 
-Use the `/etc` configuration files from my dotfiles
-```
-$ rm /etc/locale.gen /etc/pacman.conf /etc/systemd/journald.conf
+Symlink all the dotfiles I need with `GNU Stow`
+```shell
+# Do this first!!!
+$ rm /etc/locale.gen /etc/pacman.conf /etc/systemd/journald.conf /etc/makepkg.conf
 $ stow -t / etc
+
+# Then all the rest
+$ stow neovim # An example...
 ```
 
 Generate the locales
@@ -220,9 +208,19 @@ Generate the locales
 $ locale-gen
 ```
 
-Set the default shell (see the list with `chsh -l`)
+Sync `pacman` databases again to get `multilib`
 ```
-$ chsh -s /usr/bin/zsh
+$ pacman -Syy
+```
+
+Install packages from official repositories (with force otherwise file conflicts arise with files I stow'ed earlier)
+```
+$ pacman --force --noconfirm -S $(< pkgs/pkgs.txt)
+```
+
+Reset my dotfiles to their original state (since some files might have been overwritten by `pacman --force`)
+```
+git checkout etc/
 ```
 
 Set the timezone (make sure to have the package `ntp`)
@@ -231,19 +229,9 @@ $ timedatectl set-ntp true
 $ timedatectl set-timezone Europe/Berlin
 ```
 
-Sync `pacman` databases again to get `multilib`
+Set the default shell (see the list with `chsh -l`)
 ```
-$ pacman -Syy
-```
-
-Install packages from official repositories
-```
-$ pacman -S $(< pkgs/pkgs.txt)
-```
-
-Symlink all the dotfiles I need with `GNU Stow`
-```shell
-$ stow neovim # An example...
+$ chsh -s /usr/bin/zsh
 ```
 
 Install aura (if I need packages from AUR)
@@ -252,7 +240,7 @@ Install aura (if I need packages from AUR)
 
 Install packages from AUR
 
-```aura -A $(< pkgs/aur-pkgs.txt)```
+```aura --noconfirm -A $(< pkgs/aur-pkgs.txt)```
 
 Log out of `root` and log back in as the user created earlier
 ```
@@ -261,5 +249,4 @@ exit
 
 TODO:
 1. SSH key to GitHub
-2. Change dotfiles repo to use SSH
-3. Clear up mozilla config, it is confusing now and not automated
+2. Clear up mozilla config, it is confusing now and not automated
