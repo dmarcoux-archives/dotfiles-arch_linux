@@ -7,8 +7,11 @@
   chp = cherry-pick
   pure = pull --rebase
   lo = log --oneline
+[commit]
+  gpgsign = true
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
+  signingkey = 82FA5A4A
 [push]
   default = nothing
