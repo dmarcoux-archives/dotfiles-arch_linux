@@ -135,7 +135,7 @@ bindsym $mod+Shift+C exec sflock
 bindsym $mod+Return exec termite
 
 # Kill the focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+Shift+Escape kill
 
 # Start the program launcher (j4-dmenu-desktop)
 bindsym $mod+D exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Mono 13' -l 10"
