@@ -136,6 +136,14 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 " Class sort order
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
+"---------- auto-pairs
+
+" Remove the default mapping to toggle auto-pairs
+let g:AutoPairsShortcutToggle = ''
+
+" Remove the default mapping to jump to the next closed pair
+let g:AutoPairsShortcutJump = ''
+
 "-------------------- Mappings
 
 " Mappings are recursive, so they will keep evaluating until they hit a dead end (a non-recursive mapping or the last mapping)
