@@ -38,6 +38,9 @@ Plug 'https://github.com/rstacruz/vim-closer'
 " End certain structures automatically. In Ruby, this means adding end after if, do, def and several other keywords
 Plug 'https://github.com/tpope/vim-endwise'
 
+" Insert or delete brackets, parens, quotes in pair
+Plug 'https://github.com/jiangmiao/auto-pairs'
+
 " Snippets engine and the actual snippets
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'https://github.com/SirVer/ultisnips' | Plug 'https://github.com/honza/vim-snippets'
