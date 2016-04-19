@@ -120,6 +120,12 @@ let g:go_highlight_build_constraints = 1
 " Replace gofmt by goimports, as it does the same, but on top fixes import paths
 let g:go_fmt_command = "goimports"
 
+" Set linters to run when saving
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+
+" Run linters when saving
+let g:go_metalinter_autosave = 1
+
 "---------- deoplete.nvim
 
 " Use deoplete
