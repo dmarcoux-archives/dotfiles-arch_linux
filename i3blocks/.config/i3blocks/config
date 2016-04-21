@@ -3,11 +3,6 @@
 separator_block_width=30
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
 
-[ethernet]
-interval=10
-
-[separator]
-
 [cpu_usage]
 label=CPU
 interval=10
