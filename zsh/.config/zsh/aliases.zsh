@@ -6,12 +6,9 @@ alias wget='wget -c' # Always resume download if partial file found
 alias history='history 1' # Retrieve all history (useful when using piping the output to grep/ag/whatever)
 
 #----- systemd
-alias sa='systemctl start'
-alias so='systemctl stop'
-alias se='systemctl enable'
-alias sd='systemctl disable'
-alias soff='systemctl poweroff'
-alias sreb='systemctl reboot'
+alias sysd='systemctl'
+alias shutdown='systemctl poweroff'
+alias reboot='systemctl reboot'
 
 #----- Safety nets
 # prompt when removing more than 3 files at a time and do not remove '/'
