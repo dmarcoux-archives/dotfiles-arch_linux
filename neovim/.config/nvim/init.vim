@@ -30,6 +30,9 @@ Plug 'https://github.com/tpope/vim-sleuth'
 " Asynchronous keyword completion system
 Plug 'https://github.com/Shougo/deoplete.nvim'
 
+" Class outline viewer
+Plug 'https://github.com/majutsushi/tagbar'
+
 "---------- Completion Plugins
 
 " Close parentheses and square/curly brackets automatically after pressing Enter
@@ -120,12 +123,6 @@ let g:go_highlight_build_constraints = 1
 " Replace gofmt by goimports, as it does the same, but on top fixes import paths
 let g:go_fmt_command = "goimports"
 
-" Set linters to run when saving
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-
-" Run linters when saving
-let g:go_metalinter_autosave = 1
-
 "---------- deoplete.nvim
 
 " Use deoplete
@@ -141,6 +138,10 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 
 " Class sort order
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+"---------- tagbar
+
+autocmd BufEnter * :TagbarOpen
 
 "---------- auto-pairs
 
