@@ -9,12 +9,6 @@ interval=10
 
 [separator]
 
-[volume]
-interval=once
-signal=1
-
-[separator]
-
 [time]
 command=date '+%a %d, %B %Y %T'
 interval=1

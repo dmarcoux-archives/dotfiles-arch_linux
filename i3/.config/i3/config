@@ -93,6 +93,9 @@ exec --no-startup-id compton -CGb --config ~/.config/compton/config
 # Start audio server (pulseaudio)
 exec --no-startup-id pulseaudio --start
 
+# Start volume mixer
+exec --no-startup-id pnmixer
+
 # Set wallpaper with feh
 exec --no-startup-id feh --bg-scale /home/dany/dotfiles/wallpaper.jpg
 
@@ -115,11 +118,6 @@ exec --no-startup-id firefox
 #################
 # Key bindings
 #################
-
-# Sound control function keys
-bindsym XF86AudioRaiseVolume exec ponymix increase 2 && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec ponymix decrease 2 && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute        exec ponymix toggle     && pkill -SIGRTMIN+1 i3blocks
 
 # Brightness adjustment function keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
