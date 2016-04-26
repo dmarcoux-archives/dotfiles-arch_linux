@@ -15,3 +15,5 @@
   signingkey = 82FA5A4A
 [push]
   default = nothing
+[core]
+  excludesfile = ~/.config/git/.gitignore_global
