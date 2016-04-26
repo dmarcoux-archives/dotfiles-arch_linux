@@ -27,9 +27,6 @@ Plug 'https://github.com/tpope/vim-surround'
 " Try to automatically adjust 'shiftwidth' and 'expandtab' based on the current file or its parents
 Plug 'https://github.com/tpope/vim-sleuth'
 
-" Asynchronous keyword completion system
-Plug 'https://github.com/Shougo/deoplete.nvim'
-
 " Class outline viewer
 Plug 'https://github.com/majutsushi/tagbar'
 
@@ -52,14 +49,6 @@ Plug 'https://github.com/SirVer/ultisnips' | Plug 'https://github.com/honza/vim-
 
 " Configuration files for Ruby
 Plug 'https://github.com/vim-ruby/vim-ruby', { 'for': 'ruby' }
-
-"---------- Go Plugins
-
-" Go development with pre-defined sensible defaults
-Plug 'https://github.com/fatih/vim-go', { 'for': 'go' }
-
-" Asynchronous Go completion
-Plug 'https://github.com/zchee/deoplete-go', { 'do': 'make'}
 
 "---------- Colorscheme Plugins
 
@@ -109,35 +98,6 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Set solarized light colorscheme
 set background=light
 colorscheme solarized
-
-"---------- vim-go
-
-" Syntax highlighting for functions, methods, structs, etc...
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" Replace gofmt by goimports, as it does the same, but on top fixes import paths
-let g:go_fmt_command = "goimports"
-
-"---------- deoplete.nvim
-
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
-
-" Do not select by default an option in the autocompletion menu
-set completeopt+=noselect
-
-"---------- deoplete-go
-
-" Set gocode binary's location
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-
-" Class sort order
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 "---------- tagbar
 
