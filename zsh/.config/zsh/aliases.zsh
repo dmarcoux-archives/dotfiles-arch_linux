@@ -11,18 +11,17 @@ alias shutdown='systemctl poweroff'
 alias reboot='systemctl reboot'
 
 #----- Safety nets
-# prompt when removing more than 3 files at a time and do not remove '/'
+# Prompt when removing more than 3 files at a time and do not remove '/'
 alias rm='rm -I --preserve-root'
+# Fail to operate recursively on '/'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 #----- Confirmation
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
-
-#----- Fail to operate recursively on '/'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
 
 #----- Package management and system upgrades
 alias pacman='sudo pacman'
@@ -49,3 +48,8 @@ alias curljson='curl -H "Content-Type: application/json" --data' # Then add '{"a
 #----- Docker and Docker Compose
 alias doc='docker'
 alias doccom='docker-compose'
+
+#----- Vim
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
