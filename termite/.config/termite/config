@@ -1,9 +1,8 @@
 [options]
 audible_bell=false
-browser=firefox
 clickable_url=true
 cursor_blink=system
-cursor_shape=underline
+cursor_shape=block
 dynamic_title=true
 mouse_autohide=true
 search_wrap=true
