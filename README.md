@@ -98,32 +98,10 @@ If needed, go back to the branch of the computer I am currently using
 
 Bits and chunks of my config files come from these sources. Thanks to the people behind them!
 
-- Using GNU Stow to manage your dotfiles
-
-http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
-
-- zsh and GNU Stow usage
-
-https://github.com/xero/dotfiles
-
-- Solarized theme for termite
-
-https://github.com/alpha-omega/termite-colors-solarized
-
-- i3blocks (cpu_usage, ethernet and wifi)
-
-https://github.com/vivien/i3blocks
-
-- xrandr_both script
-
-https://github.com/j-san/i3-config/blob/master/configure-xrandr.sh
-
-- install_arch_linux mardown file (I made it myself, but couldn't have done it without these references)
-
-https://wiki.archlinux.org/index.php/Beginners'_guide
-
-http://jorisvandijk.com/2014/installing-arch-on-a-uefi-gpt-system/
-
-- .Xresources
-
-https://www.reddit.com/r/archlinux/comments/40w3ld/why_is_font_rendering_so_crap_by_default/cyxlida
+- [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+- [zsh](https://github.com/xero/dotfiles) and [GNU Stow usage](https://github.com/xero/dotfiles/issues/6)
+- [Solarized theme for termite](https://github.com/alpha-omega/termite-colors-solarized)
+- [i3blocks](https://github.com/vivien/i3blocks)
+- [xrandr_both script](https://github.com/j-san/i3-config/blob/master/configure-xrandr.sh)
+- install_arch_linux.md (I couldn't have done it without these references: [1](https://wiki.archlinux.org/index.php/Beginners'_guide), [2](http://jorisvandijk.com/2014/installing-arch-on-a-uefi-gpt-system/))
+- [.Xresources](https://www.reddit.com/r/archlinux/comments/40w3ld/why_is_font_rendering_so_crap_by_default/cyxlida)
