@@ -5,6 +5,7 @@ cursor_blink=system
 cursor_shape=block
 dynamic_title=true
 mouse_autohide=true
+scrollback_lines=50000
 search_wrap=true
 visible_bell=false
 
