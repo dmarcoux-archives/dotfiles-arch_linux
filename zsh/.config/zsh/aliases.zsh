@@ -43,7 +43,7 @@ alias -g rcop='rubocop' # Global alias
 alias rcophtml='rubocop -f html -o ./tmp/rubocop.html'
 
 #----- cURL
-alias curljson='curl -H "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
+alias curljson='curl --verbose --header "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
 
 #----- Docker and Docker Compose
 alias doc='docker'
