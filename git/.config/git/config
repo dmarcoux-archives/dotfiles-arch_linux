@@ -3,10 +3,11 @@
   com = commit
   sta = status
   bra = branch
-  hist = log --pretty=format:\"%h %ad [%an] %s%d\" --graph --date=short
   chp = cherry-pick
   pure = pull --rebase
   lo = log --oneline
+  pu = push
+  puf = push --force-with-lease
 [commit]
   gpgsign = true
 [user]
