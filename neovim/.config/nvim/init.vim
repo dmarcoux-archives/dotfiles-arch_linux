@@ -45,10 +45,13 @@ Plug 'https://github.com/jiangmiao/auto-pairs'
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'https://github.com/SirVer/ultisnips' | Plug 'https://github.com/honza/vim-snippets'
 
-"---------- Ruby Plugins
+"---------- Environment Specific Plugins
 
 " Configuration files for Ruby
 Plug 'https://github.com/vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+" Configuration files for Git runtime files
+Plug 'https://github.com/tpope/vim-git'
 
 "---------- Colorscheme Plugins
 
@@ -196,7 +199,6 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Enable syntax highlighting
 syntax enable
-
 
 " Set the title of the terminal to the file name (up to maximum 70 characters)
 set title
