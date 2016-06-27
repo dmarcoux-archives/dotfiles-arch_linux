@@ -53,6 +53,9 @@ Plug 'https://github.com/vim-ruby/vim-ruby', { 'for': 'ruby' }
 " Configuration files for Git runtime files
 Plug 'https://github.com/tpope/vim-git'
 
+" Configuration files for Elixir
+Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
+
 "---------- Colorscheme Plugins
 
 " Solarized light and dark colorscheme
