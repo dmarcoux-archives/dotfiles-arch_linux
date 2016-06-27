@@ -20,47 +20,47 @@ To manage the different setups I have between my computers, I simply use Git. Pl
 
 Go to your home directory
 
-```cd ~```
+`cd`
 
 Clone the repo
 
-```git clone http://github.com/dmarcoux/dotfiles```
+`git clone http://github.com/dmarcoux/dotfiles`
 
 Go to the dotfiles directory
 
-```cd dotfiles```
+`cd dotfiles`
 
 Select the branch you want to use for this computer (or stay on `master`)
 
-```git checkout the_branch_name```
+`git checkout the_branch_name`
 
 Install packages from official repositories
 
-```pacman -S $(< pkgs/pkgs.txt)```
+`pacman -S $(< pkgs/pkgs.txt)`
 
 Install aura (if you need packages from AUR)
 
-```bash scripts/install_aura.sh```
+`bash scripts/install_aura.sh`
 
 Install packages from AUR
 
-```aura -A $(< pkgs/aur-pkgs.txt)```
+`aura -A $(< pkgs/aur-pkgs.txt)`
 
 Install *xyz* in $HOME (for example, neovim)
 
-```stow neovim```
+`stow neovim`
 
 Uninstall *xyz* from $HOME (for example, neovim)
 
-```stow -D neovim```
+`stow -D neovim`
 
 Install *abc* in a specific directory (for example, *etc* in the directory `/`)
 
-```sudo stow -t / etc```
+`sudo stow -t / etc`
 
 Uninstall *abc* from a specific directory (for example, *etc* from the directory `/`)
 
-```sudo stow -D etc -t /```
+`sudo stow -D etc -t /`
 
 
 ### Git Workflow
@@ -76,11 +76,11 @@ git pull --rebase
 
 Add and commit my changes to the `master` branch
 
-```git commit -am "My commit's message"```
+`git commit -am "My commit's message"`
 
 Push my changes to this repository
 
-```git push origin master```
+`git push origin master`
 
 Rebase my other branches and push the rebased branches to this repository
 
@@ -91,7 +91,7 @@ git push origin laptop_work --force
 
 If needed, go back to the branch of the computer I am currently using
 
-```git checkout laptop_personal```
+`git checkout laptop_personal`
 
 
 ###Credits
