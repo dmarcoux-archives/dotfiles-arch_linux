@@ -55,7 +55,20 @@ drm() {
 }
 
 # Remove all unused images
-drmi() { docker rmi $(docker images -q); }
+drmi() {
+  echo -e "Remove all unused Docker images?\n"
+
+  docker images --filter=dangling=true # See what we would remove
+
+  echo "" # Skipping a line
+
+  select choice in Yes No; do
+    case $choice in
+      Yes) docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi; break;;
+      No) break;;
+    esac
+  done
+}
 
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q); }
