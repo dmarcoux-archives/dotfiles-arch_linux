@@ -19,25 +19,35 @@ up() {
 
 #----- Docker
 
-# Remove all non-running containers OR Remove containers linked to a docker image
-# $1: docker image (partial or complete name)
+# Remove all non-running containers
+#   OR
+# Remove containers based on their name
+#
+# $1: name (partial or complete)
 drm() {
-  if [ -z "$1" ]; then # No argument...
-    echo "Remove all non-running containers?"
+  if [ -z "$1" ]; then # No name...
+    echo -e "Remove all non-running Docker containers?\n"
+
+    docker ps --all --filter=status=exited # See what we would remove
+
+    echo "" # Skipping a line
+
     select choice in Yes No; do
       case $choice in
-	Yes) docker rm $(docker ps -a -q); break;;
+	Yes) docker ps --all --quiet | xargs --no-run-if-empty docker rm; break;;
 	No) break;;
       esac
     done
   else
-    echo -e "Remove the following containers\n"
-    # Using grep as 'ag --before' doesn't work when piping: https://github.com/ggreer/the_silver_searcher/issues/869
-    docker ps -a | grep --color --before 1 $1 # See what we would remove
-    echo "" # Simply skipping a line...
+    echo -e "Remove the following containers?\n"
+
+    docker ps --all --filter="name=$1" # See what we would remove
+
+    echo "" # Skipping a line
+
     select choice in Yes No; do
       case $choice in
-	Yes) docker ps -a | ag $1 | awk '{ print $1 }' | xargs docker rm; break;;
+	Yes) docker ps --all --quiet --filter="name=$1" | xargs --no-run-if-empty docker rm; break;;
 	No) break;;
       esac
     done
