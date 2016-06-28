@@ -71,4 +71,17 @@ drmi() {
 }
 
 # Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
+dstop() {
+  echo -e "Stop all Docker containers?\n"
+
+  docker ps # See what we would stop
+
+  echo "" # Skipping a line
+
+  select choice in Yes No; do
+    case $choice in
+      Yes) docker ps --all --quiet | xargs --no-run-if-empty docker stop; break;;
+      No) break;;
+    esac
+  done
+}
