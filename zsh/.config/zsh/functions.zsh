@@ -4,8 +4,18 @@
 #   ~$ cd ~/dir/example/folder
 #   ~/dir/example/folder$ up 2
 #   ~/dir$
-# Credits: http://www.bashoneliners.com/oneliners/oneliner/220/
-up() { DEEP=$1; [ -z "${DEEP}" ] && { DEEP=1; }; for i in $(seq 1 ${DEEP}); do cd ../; done; }
+# Credits: http://www.bashoneliners.com/oneliners/oneliner/220/ (I simply reformated the script)
+up() {
+  DEPTH=$1;
+
+  if [ -z "${DEPTH}" ]; then # No depth provided...
+    DEPTH=1;
+  fi
+
+  for i in $(seq 1 ${DEPTH}); do
+    cd ../
+  done
+}
 
 #----- Docker
 
