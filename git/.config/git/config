@@ -1,13 +1,13 @@
 [alias]
-  cko = checkout
-  com = commit
-  sta = status
   bra = branch
   chp = cherry-pick
-  pure = pull --rebase
+  cko = checkout
+  com = commit
   lo = log --oneline
   pu = push
   puf = push --force-with-lease
+  pure = pull --rebase
+  sta = status
 [commit]
   gpgsign = true
 [user]
