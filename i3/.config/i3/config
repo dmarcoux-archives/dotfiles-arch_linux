@@ -111,8 +111,8 @@ exec --no-startup-id gpg-agent --daemon
 # Start a terminal
 exec --no-startup-id termite
 
-# Start a web browser (firefox)
-exec --no-startup-id firefox
+# Start a web browser
+exec --no-startup-id $BROWSER
 
 #################
 # Key bindings
