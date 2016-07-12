@@ -87,6 +87,9 @@ bar {
 # Applications
 #################
 
+# Assign applications to workspaces to have them start on a specific workspace
+assign [class="^Firefox$"] → $WS2
+
 # Start composite manager (compton)
 exec --no-startup-id compton -CGb --config ~/.config/compton/config
 
@@ -104,10 +107,6 @@ exec --no-startup-id devmon
 
 # Start daemon for GPG
 exec --no-startup-id gpg-agent --daemon
-
-# Assign programs to workspaces
-assign [class="^Firefox$"] → $WS2
-assign [class="^Skype$"] → $WS3
 
 # Start a terminal
 exec --no-startup-id termite
