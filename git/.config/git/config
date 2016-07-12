@@ -11,11 +11,11 @@
   sta = status
 [commit]
   gpgsign = true
+[core]
+  excludesfile = ~/.config/git/.gitignore_global
+[push]
+  default = nothing
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
   signingkey = 82FA5A4A
-[push]
-  default = nothing
-[core]
-  excludesfile = ~/.config/git/.gitignore_global
