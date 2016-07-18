@@ -1,4 +1,4 @@
-# Help command is not built in. This enables it
+# Enable the command help
 autoload -Uz run-help
 autoload -Uz run-help-git
 autoload -Uz run-help-svn
