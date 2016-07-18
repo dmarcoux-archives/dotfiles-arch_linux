@@ -25,8 +25,3 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 # User-specific runtime files
 # XDG_RUNTIME_DIR is already set through pam_systemd
-
-#----- Go
-export GOPATH=~/projets/go
-export GOROOT=/usr/lib/go
-export PATH="$PATH:$GOPATH/bin"
