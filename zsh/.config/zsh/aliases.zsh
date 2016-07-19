@@ -29,10 +29,8 @@ alias aura='sudo aura'
 alias sup='pacman -Syu --noconfirm && aura -Akyu --noconfirm'
 
 #----- Databases
-alias sa-psql='systemctl start postgresql.service'
-alias so-psql='systemctl stop postgresql.service'
-alias sa-mysql='systemctl start mysqld.service'
-alias so-mysql='systemctl stop mysqld.service'
+alias mysql='mysql --auto-vertical-output' # Automatically switch to vertical output mode
+alias mycli='mycli --auto-vertical-output' # if the result is wider than the terminal width
 
 #----- Ruby
 alias b='bundle'
