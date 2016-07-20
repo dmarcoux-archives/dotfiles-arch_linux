@@ -10,12 +10,12 @@
   reb = rebase
   sta = status
 [commit]
-  gpgsign = true
+  gpgSign = true
 [core]
-  excludesfile = ~/.config/git/.gitignore_global
+  excludesFile = ~/.config/git/.gitignore_global
 [push]
   default = nothing
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
-  signingkey = 82FA5A4A
+  signingKey = 82FA5A4A
