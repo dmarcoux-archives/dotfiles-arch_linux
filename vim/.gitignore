@@ -1,0 +1,3 @@
+# Ignoring netrw history and plugins
+.vim/.netrwhist
+.vim/plugged/*

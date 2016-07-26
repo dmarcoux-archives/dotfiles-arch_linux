@@ -1,9 +1,12 @@
+" Use vim settings, rather than vi settings. It must be first because it changes other options
+set nocompatible
+
 "-------------------- Plugins
 
 "---------- Plugins Initialization
 
-" Start vim-plug (Neovim plugin manager)
-call plug#begin('~/.config/nvim/plugged')
+" Start vim-plug (Vim plugin manager)
+call plug#begin('~/.vim/plugged')
 
 "---------- Search Plugins
 
@@ -119,6 +122,12 @@ let g:AutoPairsShortcutJump = ''
 
 "-------------------- Mappings
 
+" Mouse can be used in all modes
+set mouse=a
+
+" Backspace can be used over everything in insert mode
+set backspace=indent,eol,start
+
 " Mappings are recursive, so they will keep evaluating until they hit a dead end (a non-recursive mapping or the last mapping)
 set remap
 
@@ -205,10 +214,13 @@ syntax enable
 
 " Set the title of the terminal to the file name (up to maximum 70 characters)
 set title
-set titlestring=NEOVIM:\ %F titlelen=70
+set titlestring=vim:\ %F titlelen=70
 
 " Show column and line numbers at the bottom
 set ruler
+
+" Always show the status line at the bottom
+set laststatus=2
 
 " Format the status line
 set statusline=\ FILE:\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -251,7 +263,16 @@ set lazyredraw
 " Ignore case when searching
 set ignorecase
 
+" Highlight search results
+set hlsearch
+
+" Match search pattern while typing
+set incsearch
+
 "-------------------- Space, Tabs & Indentation
+
+" Copy indent from current line when starting a new line
+set autoindent
 
 " An indent is automatically inserted:
 "- After a line ending in '{'.
@@ -278,7 +299,11 @@ set clipboard^=unnamedplus
 " Enable loading of plugins, settings, key mappings based on file types
 filetype plugin indent on
 
+" Read again files which were changed outside of vim
+set autoread
+
 " Set utf8 as standard encoding
+set encoding=utf8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
@@ -293,6 +318,9 @@ set nowritebackup
 set noswapfile
 
 "-------------------- Wildmenu
+
+" Enable wildmenu, the command-line completion menu
+set wildmenu
 
 " Ignore case
 set wildignorecase

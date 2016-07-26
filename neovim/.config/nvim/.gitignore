@@ -1,4 +1,0 @@
-# Ignoring netrw history, plugins and remote plugins
-.netrwhist
-plugged/*
-.init.vim-rplugin~

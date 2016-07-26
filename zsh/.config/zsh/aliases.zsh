@@ -48,9 +48,8 @@ alias doc='docker'
 alias doccom='docker-compose'
 
 #----- Vim
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='vim'
+alias vi='vim'
 
 #----- Git
 alias gitroot='git rev-parse --show-toplevel > /dev/null && cd $(git rev-parse --show-toplevel)'

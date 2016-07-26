@@ -46,13 +46,13 @@ Install packages from AUR
 
 `aura -A $(< pkgs/aur-pkgs.txt)`
 
-Install *xyz* in $HOME (for example, neovim)
+Install *xyz* in $HOME (for example, vim)
 
-`stow neovim`
+`stow vim`
 
-Uninstall *xyz* from $HOME (for example, neovim)
+Uninstall *xyz* from $HOME (for example, vim)
 
-`stow -D neovim`
+`stow -D vim`
 
 Install *abc* in a specific directory (for example, *etc* in the directory `/`)
 

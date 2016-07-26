@@ -177,9 +177,9 @@ Sync `pacman` databases
 $ pacman -Syy
 ```
 
-Install `git`, `neovim` and `GNU Stow` to get, edit and symlink my dotfiles
+Install `git`, `gvim` and `GNU Stow` to get, edit and symlink my dotfiles (`gvim` is needed to have the system's clipboard functional on Arch Linux)
 ```
-$ pacman -S git neovim stow
+$ pacman -S git gvim stow
 ```
 
 Clone my dotfiles repository using HTTP for now since my SSH key isn't set on GitHub yet, then go into the directory
@@ -200,7 +200,7 @@ $ rm /etc/locale.gen /etc/pacman.conf /etc/systemd/journald.conf /etc/makepkg.co
 $ stow -t / etc
 
 # Then all the rest
-$ stow neovim # An example...
+$ stow vim # An example...
 ```
 
 Copy the boot loader configuration from my dotfiles
