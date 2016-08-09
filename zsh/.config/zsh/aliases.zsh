@@ -50,3 +50,6 @@ alias doccom='docker-compose'
 #----- Vim
 alias v='vim'
 alias vi='vim'
+
+#----- File manager
+alias ra='ranger'
