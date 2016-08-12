@@ -105,6 +105,9 @@ exec --no-startup-id feh --bg-scale /home/dany/dotfiles/wallpaper.jpg
 # Start daemon for automounting optical and removable drives (devmon)
 exec --no-startup-id devmon
 
+# Start clipboard manager
+exec --no-startup-id xfce4-clipman
+
 # Start a terminal
 exec --no-startup-id termite
 
