@@ -90,19 +90,19 @@ bar {
 # Assign applications to workspaces to have them start on a specific workspace
 assign [class="^Firefox$"] → $WS2
 
-# Start composite manager (compton)
+# Start composite manager
 exec --no-startup-id compton -CGb --config ~/.config/compton/config
 
-# Start audio server (pulseaudio)
+# Start audio server
 exec --no-startup-id pulseaudio --start
 
 # Start volume mixer
 exec --no-startup-id pnmixer
 
-# Set wallpaper with feh
+# Set wallpaper
 exec --no-startup-id feh --bg-scale /home/dany/dotfiles/wallpaper.jpg
 
-# Start daemon for automounting optical and removable drives (devmon)
+# Start daemon for automounting optical and removable drives
 exec --no-startup-id devmon
 
 # Start clipboard manager
@@ -128,13 +128,13 @@ bindsym $mod+Shift+R restart
 # Screen lock
 bindsym $mod+Shift+C exec sflock
 
-# Start a terminal (termite)
+# Start a terminal
 bindsym $mod+Return exec termite
 
 # Kill the focused window
 bindsym $mod+Shift+Escape kill
 
-# Start the program launcher (j4-dmenu-desktop)
+# Start program launcher
 bindsym $mod+D exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'DejaVu Sans Mono 13' -l 10"
 
 # Change focus
