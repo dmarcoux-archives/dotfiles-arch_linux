@@ -3,6 +3,8 @@
   chp = cherry-pick
   cko = checkout
   com = commit
+  di = diff
+  dis = diff --staged
   lo = log --oneline
   pu = push
   puf = push --force-with-lease
