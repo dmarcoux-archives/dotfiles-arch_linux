@@ -10,6 +10,7 @@
   puf = push --force-with-lease
   pure = pull --rebase
   reb = rebase
+  sh = show
   sta = status
 [commit]
   gpgSign = true
