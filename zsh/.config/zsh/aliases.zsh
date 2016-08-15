@@ -32,14 +32,6 @@ alias sup='pacman -Syu --noconfirm && aura -Akyu --noconfirm'
 alias mysql='mysql --auto-vertical-output' # Automatically switch to vertical output mode
 alias mycli='mycli --auto-vertical-output' # if the result is wider than the terminal width
 
-#----- Ruby
-alias b='bundle'
-alias bi='bundle install'
-alias be='noglob bundle exec' # Disable zsh glob operators with noglob (mostly for rake)
-alias bl='bundle list'
-alias -g rcop='rubocop' # Global alias
-alias rcophtml='rubocop --format html --out ./tmp/rubocop.html'
-
 #----- cURL
 alias curljson='curl --verbose --header "Content-Type: application/json" --data' # Then add '{"abc":"123","def":"'my text'"}' http://whatever.com
 
