@@ -46,5 +46,9 @@ alias vi='vim'
 #----- Git
 alias g='git'
 
+#----- Clipboard copy/paste
+alias cbc='xsel --clipboard --input'
+alias cbp='xsel --clipboard --output'
+
 #----- File manager
 alias ra='ranger'
