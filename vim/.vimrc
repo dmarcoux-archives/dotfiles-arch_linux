@@ -59,6 +59,9 @@ Plug 'https://github.com/tpope/vim-git'
 " Configuration files for Elixir
 Plug 'https://github.com/elixir-lang/vim-elixir', { 'for': 'elixir' }
 
+" Configuration files for Go
+Plug 'https://github.com/fatih/vim-go', { 'for': 'go' }
+
 "---------- Colorscheme Plugins
 
 " Solarized light and dark colorscheme
