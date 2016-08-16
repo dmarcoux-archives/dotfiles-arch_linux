@@ -168,9 +168,6 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "---------- Normal, Visual and Operator Pending Modes
 
-" Non-recursive mapping to go quicker in command mode
-noremap ; :
-
 " Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
