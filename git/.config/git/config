@@ -10,6 +10,8 @@
   puf = push --force-with-lease
   pure = pull --rebase
   reb = rebase
+  rebc =rebase --continue
+  rebi = rebase -i
   sh = show
   sta = status
 [commit]
