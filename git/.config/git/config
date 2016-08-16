@@ -3,6 +3,7 @@
   chp = cherry-pick
   cko = checkout
   com = commit
+  coma = commit --amend
   di = diff
   dis = diff --staged
   lo = log --oneline
