@@ -1,7 +1,7 @@
 #----- Editor & Browser
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER=firefox
+export BROWSER=chromium
 
 #----- Locale
 export LC_COLLATE=en_US.UTF-8
