@@ -1,0 +1,15 @@
+[redshift]
+; Set the screen temperatures
+temp-day=5500
+temp-night=3500
+
+; No smooth transition between day and night
+transition=0
+
+; Set the screen gamma (for all colors)
+gamma=0.8
+
+; Automatic geolocation
+location-provider=geoclue2
+
+adjustment-method=randr
