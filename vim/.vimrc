@@ -335,3 +335,11 @@ set wildmode=longest,list,full
 
 " Remove all trailing whitespaces right before saving
 autocmd BufWritePre * :%s/\s\+$//e
+
+autocmd BufNewFile,BufReadPost *.md call SetMarkdownOptions()
+function SetMarkdownOptions()
+    " Force Markdown type for all files with the .md extension (from tpope/vim-markdown)
+    set filetype=markdown
+    " Wrap lines at 80 characters
+    setlocal textwidth=80
+endfunction
