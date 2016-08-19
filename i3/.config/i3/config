@@ -117,6 +117,9 @@ exec --no-startup-id $BROWSER
 # Start time+location-based color temperature adjuster for monitors
 exec --no-startup-id redshift-gtk -c ~/.config/redshift/config
 
+# Start network manager
+exec --no-startup-id cmst
+
 #################
 # Key bindings
 #################
