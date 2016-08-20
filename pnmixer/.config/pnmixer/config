@@ -1,5 +1,5 @@
 [PNMixer]
-DisplayTextVolume=false
+DisplayTextVolume=true
 TextVolumePosition=2
 MouseScrollStep=5
 HotkeyVolumeStep=2
@@ -10,8 +10,8 @@ VolUpKey=123
 VolDownKey=122
 AlsaCard=(default)
 DrawVolMeter=true
-VolMeterPos=0
-VolMeterColor=59624;28270;28270;
+VolMeterPos=80
+VolMeterColor=0.30588235294117649;0.60392156862745094;0.023529411764705882;
 VolumeControlCommand=pavucontrol
 NormalizeVolume=false
 EnableHotKeys=true
@@ -24,6 +24,10 @@ MouseNotifications=true
 PopupNotifications=false
 ExternalNotifications=false
 NotificationTimeout=1500
+SliderOrientation=vertical
+SystemTheme=false
+ScrollStep=5
+FineScrollStep=1
 
 [(default)]
 Channel=Master
