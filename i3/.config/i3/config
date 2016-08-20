@@ -118,7 +118,7 @@ exec --no-startup-id $BROWSER
 exec --no-startup-id redshift-gtk -c ~/.config/redshift/config
 
 # Start network manager
-exec --no-startup-id cmst
+exec --no-startup-id cmst --minimized
 
 #################
 # Key bindings
