@@ -19,6 +19,8 @@
   gpgSign = true
 [core]
   excludesFile = ~/.config/git/.gitignore_global
+[diff]
+  compactionHeuristic = true
 [push]
   default = current
   followTags = true
