@@ -20,6 +20,7 @@
 [core]
   excludesFile = ~/.config/git/.gitignore_global
 [diff]
+  algorithm = histogram
   compactionHeuristic = true
 [push]
   default = current
