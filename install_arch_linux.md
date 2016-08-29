@@ -262,4 +262,3 @@ $ systemctl enable NetworkManager --now
 
 TODO:
 1. SSH key to GitHub
-2. Clear up mozilla config, it is confusing now and not automated

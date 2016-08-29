@@ -1,7 +1,0 @@
-# To prevent having to deal with a lot of manual operations,
-# I ignore everything added by Mozilla Firefox so I can easily use GNU Stow
-*
-
-!.gitignore
-!.mozilla/firefox/profiles.ini
-!.mozilla/firefox/profile.default/user.js
