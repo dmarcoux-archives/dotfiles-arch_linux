@@ -33,6 +33,9 @@ Plug 'https://github.com/tpope/vim-sleuth'
 " Class outline viewer
 Plug 'https://github.com/majutsushi/tagbar'
 
+" Simple and easy-to-use alignment plugin
+Plug 'https://github.com/junegunn/vim-easy-align'
+
 "---------- Completion Plugins
 
 " Close parentheses and square/curly brackets automatically after pressing Enter
@@ -160,11 +163,16 @@ nnoremap <Space> za
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-"---------- Visual Mode
+"---------- Visual and Select Modes
 
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+"---------- Visual Mode
+
+" Recursive mapping to start interactive EasyAlign (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
 
 "---------- Normal, Visual and Operator Pending Modes
 
@@ -177,6 +185,9 @@ noremap <Right> <NOP>
 " Non-recursive mappings to move around long wrapped lines
 noremap j gj
 noremap k gk
+
+" Recursive mapping to start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Non-recursive mapping for leader + Enter to disable text highlighting
 noremap <silent> <leader><CR> :noh<CR>
