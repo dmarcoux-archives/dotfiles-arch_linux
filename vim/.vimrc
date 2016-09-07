@@ -376,3 +376,7 @@ function SetMarkdownOptions()
     " Wrap lines at 80 characters
     setlocal textwidth=80
 endfunction
+
+" Move the quickfix window at the very bottom, no matter what
+" See ':help :wincmd' and ':help ^WJ' for more info
+autocmd FileType qf wincmd J
