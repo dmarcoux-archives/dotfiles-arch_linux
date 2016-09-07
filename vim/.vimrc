@@ -129,6 +129,25 @@ let g:AutoPairsShortcutToggle = ''
 " Remove the default mapping to jump to the next closed pair
 let g:AutoPairsShortcutJump = ''
 
+"---------- vim-go
+
+" Change the gofmt command to goimports
+let g:go_fmt_command='goimports'
+
+" Always use the quickfix list for vim-go's output
+let g:go_list_type="quickfix"
+
+" Highlight all uses of the identifier under the cursor (:GoSameIds)
+let g:go_auto_sameids=1
+
+" Enable syntax highlithing for types, fields, etc...
+let g:go_highlight_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_extra_types=1
+let g:go_highlight_generate_tags=1
+
 "-------------------- Mappings
 
 " Mouse can be used in all modes
