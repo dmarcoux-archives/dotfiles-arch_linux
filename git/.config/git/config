@@ -9,7 +9,7 @@
   lo = log --oneline
   pu = push
   puf = push --force-with-lease
-  pure = pull --rebase
+  pure = pull --rebase --autostash
   reb = rebase
   rebc =rebase --continue
   rebi = rebase -i
