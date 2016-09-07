@@ -256,8 +256,7 @@ $ exit
 
 Enable services and start them if needed
 ```
-# Example
-$ systemctl enable NetworkManager --now
+$ systemctl enable something --now
 ```
 
 TODO:
