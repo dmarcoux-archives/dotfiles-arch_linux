@@ -36,6 +36,9 @@ Plug 'https://github.com/majutsushi/tagbar'
 " Simple and easy-to-use alignment plugin
 Plug 'https://github.com/junegunn/vim-easy-align'
 
+" Simplifies the transition between multiline and single-line code
+Plug 'https://github.com/AndrewRadev/splitjoin.vim'
+
 "---------- Completion Plugins
 
 " Close parentheses and square/curly brackets automatically after pressing Enter
