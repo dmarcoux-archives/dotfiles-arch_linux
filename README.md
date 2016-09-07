@@ -71,7 +71,7 @@ Work on the `master` branch
 
 ```
 git checkout master
-git pull --rebase
+git pull --rebase --autostash
 ```
 
 Add and commit my changes to the `master` branch
@@ -86,7 +86,7 @@ Rebase my other branches and push the rebased branches to this repository
 
 ```
 git rebase master laptop_work
-git push origin laptop_work --force
+git push --force-with-lease origin laptop_work
 ```
 
 If needed, go back to the branch of the computer I am currently using
