@@ -1,7 +1,7 @@
 # Global properties
 # These properties are applied to every block.
 separator_block_width=30
-command=~/.config/i3blocks/blocks/$BLOCK_NAME
+command=$XDG_CONFIG_HOME/i3blocks/blocks/$BLOCK_NAME
 
 [cpu_usage]
 label=CPU
