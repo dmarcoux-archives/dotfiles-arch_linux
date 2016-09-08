@@ -220,9 +220,6 @@ noremap <leader>a :Ag<Space>
 " Non-recursive mapping for Ctrl + B to start ctrlp.vim in buffer mode, which is handy to switch between opened buffers
 noremap <C-B> :CtrlPBuffer<CR>
 
-" Recursive mapping of 0 to the first non-blank character of the line
-map 0 ^
-
 "-------------------- Command Mode
 
 " Non-recursive abbreviations for common typos when saving/quiting
