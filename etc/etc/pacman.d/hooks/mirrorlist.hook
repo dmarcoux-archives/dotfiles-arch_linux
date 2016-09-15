@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = pacman-mirrorlist
+
+[Action]
+Description = Updating the mirrorlist of pacman and removing mirrorlist.pacnew
+When = PostTransaction
+Depends = reflector
+Exec = /usr/bin/bash -c "reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && [[ -f /etc/pacman.d/mirrorlist.pacnew ]] && rm /etc/pacman.d/mirrorlist.pacnew"
