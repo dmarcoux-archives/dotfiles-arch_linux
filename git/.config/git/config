@@ -5,6 +5,8 @@
 [diff]
   algorithm = histogram
   compactionHeuristic = true
+[fetch]
+  prune = true
 [push]
   default = current
   followTags = true
