@@ -2,4 +2,4 @@
 bindkey -e # Use emacs key bindings
 
 # Load the config files
-for config (~/.config/zsh/*.zsh) source $config
+for config (~/.config/zsh/**/*.zsh) source $config

@@ -1,0 +1,1 @@
+alias ra='ranger'
