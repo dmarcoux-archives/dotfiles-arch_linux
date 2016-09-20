@@ -8,7 +8,7 @@ alias gcom='git commit'
 alias gcoma='git commit --amend'
 alias gdi='git diff'
 alias gdis='git diff --staged'
-alias glo='git log --oneline'
+alias glo='git log --pretty=format:"%C(green)%h%C(bold) | %Creset%s%C(bold) | %Creset%C(yellow)%an%Creset%C(bold) | %Creset%cr"' # Displays: abbreviated_commit_hash | commit_message | author_name | commit_date_relative
 alias gls='cat ~/dotfiles/zsh/.config/zsh/aliases/git.zsh | cut -c 7-' # Display git aliases
 alias gpu='git push'
 alias gpuf='git push --force-with-lease'
