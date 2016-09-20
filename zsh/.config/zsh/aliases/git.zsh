@@ -8,8 +8,10 @@ alias gcom='git commit'
 alias gcoma='git commit --amend'
 alias gdi='git diff'
 alias gdis='git diff --staged'
-alias glo='git log --pretty=format:"%C(green)%h%C(bold) | %Creset%s%C(bold) | %Creset%C(yellow)%an%Creset%C(bold) | %Creset%cr"' # Displays: abbreviated_commit_hash | commit_message | author_name | commit_date_relative
-alias gls='cat ~/dotfiles/zsh/.config/zsh/aliases/git.zsh | cut -c 7-' # Display git aliases
+# Output: abbreviated_commit_hash (%h, in green) | commit_message (%s) | author_name (%an, in yellow) | commit_date_relative (%cr)
+alias glo='git log --pretty=format:"%C(green)%h%C(reset) %C(bold)|%C(reset) %s %C(bold)|%C(reset) %C(yellow)%an%C(reset) %C(bold)|%C(reset) %cr"'
+# Outputs git aliases, without comments
+alias gls='cat ~/dotfiles/zsh/.config/zsh/aliases/git.zsh | ag -v '^\#' | cut --characters=7-'
 alias gpu='git push'
 alias gpuf='git push --force-with-lease'
 alias gpure='git pull --rebase --autostash'
