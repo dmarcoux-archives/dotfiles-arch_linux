@@ -1,20 +1,3 @@
-[alias]
-  bra = branch
-  chp = cherry-pick
-  cko = checkout
-  com = commit
-  coma = commit --amend
-  di = diff
-  dis = diff --staged
-  lo = log --oneline
-  pu = push
-  puf = push --force-with-lease
-  pure = pull --rebase --autostash
-  reb = rebase
-  rebc =rebase --continue
-  rebi = rebase -i
-  sh = show
-  sta = status
 [commit]
   gpgSign = true
 [core]
