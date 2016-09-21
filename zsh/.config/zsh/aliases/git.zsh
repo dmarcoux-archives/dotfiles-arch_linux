@@ -20,6 +20,8 @@ alias gpure='git pull --rebase --autostash'
 alias greb='git rebase'
 alias grebc='git rebase --continue'
 alias grebi='git rebase --interactive'
+# From the output of the glo alias, select the commit hash to rebase on
+alias greby='glo | yank | xargs --no-run-if-empty git rebase --interactive'
 alias gres='git reset'
 alias gsh='git show'
 alias gsta='git status'
