@@ -1,0 +1,18 @@
+! Example
+! keycode 1 = Key Shift+Key mode_switch+Key mode_switch+Shift+Key AltGr+Key AltGr+Shift+Key
+
+! Disable Left Control
+clear control
+keycode 37 =
+
+! Caps Lock acts as Left Control
+clear lock
+keycode 66 = Control_L
+add control = Control_L
+
+! AltGr + 4 produces €
+keycode 13 = 4 dollar 4 dollar EuroSign NoSymbol EuroSign
+
+! AltGr + Space produces a normal space, instead of a non-breakable space (often resulting in "command not found" errors when piping commands)
+! Credits: http://stackoverflow.com/questions/19999712/after-a-pipe-the-command-is-considered-prefixed-with-a-space
+keycode 65 = space NoSymbol space NoSymbol space NoSymbol
