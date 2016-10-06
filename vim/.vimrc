@@ -36,6 +36,9 @@ Plug 'https://github.com/junegunn/vim-easy-align'
 " Simplifies the transition between multiline and single-line code
 Plug 'https://github.com/AndrewRadev/splitjoin.vim'
 
+" Lightning fast left-right movement
+Plug 'https://github.com/unblevable/quick-scope'
+
 "---------- Completion Plugins
 
 " Close parentheses and square/curly brackets automatically after pressing Enter
