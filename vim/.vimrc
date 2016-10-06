@@ -10,9 +10,6 @@ call plug#begin('~/.vim/plugged')
 
 "---------- Search Plugins
 
-" Use ag, a code searching tool
-Plug 'https://github.com/rking/ag.vim'
-
 " Full path fuzzy file, buffer, mru, tag, ... finder
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
@@ -79,12 +76,6 @@ Plug 'https://github.com/altercation/vim-colors-solarized'
 call plug#end()
 
 "-------------------- Plugins Settings
-
-"---------- ag.vim
-
-" Always start searching from the project root
-" (the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs)
-let g:ag_working_path_mode="r"
 
 "---------- ctrlp.vim
 
@@ -214,9 +205,6 @@ nmap ga <Plug>(EasyAlign)
 " Non-recursive mapping for leader + Enter to disable text highlighting
 noremap <silent> <leader><CR> :noh<CR>
 
-" Non-recursive mapping for leader + a to search with ag (from the plugin ag.vim)
-noremap <leader>a :Ag<Space>
-
 " Non-recursive mapping for Ctrl + B to start ctrlp.vim in buffer mode, which is handy to switch between opened buffers
 noremap <C-B> :CtrlPBuffer<CR>
 
@@ -230,9 +218,6 @@ cnoreabbrev Q q
 cnoreabbrev Wq wq
 cnoreabbrev wQ wq
 cnoreabbrev WQ wq
-
-" Non-recursive abbreviation for ag.vim
-cnoreabbrev ag Ag
 
 " When forgetting to sudo before editing a file which requires root privileges, use w!! instead of w! to save changes
 cmap w!! w !sudo tee % >/dev/null
