@@ -196,6 +196,10 @@ xmap ga <Plug>(EasyAlign)
 
 "---------- Normal, Visual and Operator Pending Modes
 
+" Non-recursive mappings for n to always search forward and N to always search backward (for / and ?)
+noremap <expr> n  'Nn'[v:searchforward]
+noremap <expr> N  'nN'[v:searchforward]
+
 " Non-recursive mappings for arrows keys to perform no operation (<NOP>)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
