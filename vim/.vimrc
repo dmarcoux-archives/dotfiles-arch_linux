@@ -179,6 +179,10 @@ nnoremap <Space> za
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
+" Non-recursive mappings for O and o who behave just as expected, but also allow to add more than one line (example 5o)
+nnoremap O :<C-u>put! =repeat(nr2char(10), v:count1)<CR>'[:startinsert<CR>
+nnoremap o :<C-u>put =repeat(nr2char(10), v:count1)<CR>:startinsert<CR>
+
 "---------- Visual and Select Modes
 
 " Non-recursive mappings for Ctrl + J and Ctrl + K to move selected line(s)
