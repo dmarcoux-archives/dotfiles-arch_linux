@@ -13,8 +13,6 @@ alias gdis='git diff --staged'
 alias glo='git log --pretty=format:"%h %C(bold)|%C(reset) %s %C(bold)|%C(reset) %C(yellow)%an%C(reset) %C(bold)|%C(reset) %C(green)%cr%C(reset)"'
 # Copy a string from the output of the glo alias (a commit hash for example)
 alias gloy='glo | yank'
-# Outputs git aliases, without comments
-alias gls='cat ~/dotfiles/zsh/.config/zsh/aliases/git.zsh | ag --invert-match '^\#' | cut --characters=7-'
 alias gmer='git merge'
 alias gpu='git push'
 alias gpuf='git push --force-with-lease'
