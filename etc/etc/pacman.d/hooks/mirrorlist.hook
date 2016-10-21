@@ -5,7 +5,7 @@ Operation = Upgrade
 Target = pacman-mirrorlist
 
 [Action]
-Description = Updating the mirrorlist of pacman and removing mirrorlist.pacnew
+Description = Update the mirrorlist of pacman and remove mirrorlist.pacnew, if necessary
 When = PostTransaction
 Depends = reflector
-Exec = /usr/bin/bash -c "reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && [[ -f /etc/pacman.d/mirrorlist.pacnew ]] && rm /etc/pacman.d/mirrorlist.pacnew"
+Exec = /usr/bin/bash -c "reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && [[ -f /etc/pacman.d/mirrorlist.pacnew ]] && rm --force /etc/pacman.d/mirrorlist.pacnew"
