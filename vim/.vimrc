@@ -373,3 +373,6 @@ endfunction
 " Move the quickfix window at the very bottom, no matter what
 " See ':help :wincmd' and ':help ^WJ' for more info
 autocmd FileType qf wincmd J
+
+" For Go, do not display tabs or trailing whitespaces (gofmt takes care of them already anyway)
+autocmd FileType go set nolist
