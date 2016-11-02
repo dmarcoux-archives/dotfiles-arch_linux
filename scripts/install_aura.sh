@@ -1,5 +1,5 @@
 #/bin/bash
-cd ~
+cd
 mkdir tmp
 cd tmp
 wget -O PKGBUILD 'https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=aura-bin'
