@@ -125,8 +125,9 @@ let g:AutoPairsShortcutJump = ''
 
 "---------- vim-go
 
-" Change the gofmt command to goimports
-let g:go_fmt_command='goimports'
+" Change the default options of the gofmt command
+let g:go_fmt_options = '-s'
+
 
 " Always use the quickfix list for vim-go's output
 let g:go_list_type="quickfix"
