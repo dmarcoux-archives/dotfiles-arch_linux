@@ -88,7 +88,7 @@ bar {
 #################
 
 # Assign applications to workspaces to have them start on a specific workspace
-assign [class="^chromium$"] → $WS2
+assign [class="^Chromium$"] → $WS2
 
 # Start composite manager
 exec --no-startup-id compton -CGb --config ~/.config/compton/config
