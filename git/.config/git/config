@@ -2,6 +2,7 @@
   gpgSign = true
 [core]
   excludesFile = ~/.config/git/.gitignore_global
+  fileMode = true
 [diff]
   algorithm = histogram
   compactionHeuristic = true
