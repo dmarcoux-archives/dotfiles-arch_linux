@@ -1,3 +1,6 @@
+# hub: Wrapper for git to Improve GitHub Workflow
+alias git='hub'
+
 alias g='git'
 alias ga='git add'
 alias gbra='git branch'
