@@ -34,5 +34,7 @@ alias grev='git revert'
 # Select a commit with fzf and revert it
 alias grevf='glo | fzf --ansi --no-sort | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty git revert'
 alias gsh='git show'
+# Select a commit with fzf and show it
+alias gshf='glo | fzf --ansi --no-sort | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty git show'
 alias gst='git status'
 alias gsta='git stash'
