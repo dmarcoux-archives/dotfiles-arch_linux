@@ -23,28 +23,24 @@ set $WS4 "4:  "
 #################
 
 # Solarized (Light) colors
-set $S_base03        #002B36
-set $S_base02        #073642
-set $S_base01        #586E75
-set $S_base00        #657B83
-set $S_base0         #839496
-set $S_base1         #93A1A1
-set $S_base2         #EEE8D5
-set $S_base3         #FDF6E3
-set $S_yellow        #B58900
-set $S_orange        #CB4B16
-set $S_red           #DC322F
-set $S_magenta       #D33682
-set $S_violet        #6C71C4
-set $S_blue          #268BD2
-set $S_cyan          #2AA198
-set $S_green         #859900
+set $black         #002B36
+set $grey          #839496
+set $dark_beige    #EEE8D5
+set $light_beige   #FDF6E3
+set $yellow        #B58900
+set $orange        #CB4B16
+set $red           #DC322F
+set $magenta       #D33682
+set $violet        #6C71C4
+set $blue          #268BD2
+set $cyan          #2AA198
+set $green         #859900
 
-# TYPE                   BORDER      BACKGROUND  TEXT
-client.focused           $S_green    $S_green    $S_base3
-client.unfocused         $S_base02   $S_base02   $S_base3
-client.focused_inactive  $S_base02   $S_base02   $S_base3
-client.urgent            $S_red      $S_red      $S_base3
+# TYPE                   BORDER BACKGROUND TEXT
+client.focused           $green $green     $light_beige
+client.unfocused         $grey  $grey      $light_beige
+client.focused_inactive  $grey  $grey      $light_beige
+client.urgent            $red   $red       $light_beige
 
 #################
 # Settings
@@ -71,15 +67,15 @@ bar {
 
     colors {
         # Solarized (Light) colors
-        background $S_base3
-        statusline $S_base03
-        separator  $S_base03
+        background $light_beige
+        statusline $grey
+        separator  $grey
 
-        # TYPE              BORDER    BACKGROUND  TEXT
-        focused_workspace   $S_base3  $S_green    $S_base3
-        active_workspace    $S_base3  $S_violet   $S_base3
-        inactive_workspace  $S_base3  $S_base2    $S_base03
-        urgent_workspace    $S_base3  $S_red      $S_base3
+        # TYPE              BORDER      BACKGROUND  TEXT
+        focused_workspace   $green      $green      $light_beige
+        active_workspace    $violet     $violet     $light_beige
+        inactive_workspace  $dark_beige $dark_beige $grey
+        urgent_workspace    $red        $red        $light_beige
     }
 }
 
