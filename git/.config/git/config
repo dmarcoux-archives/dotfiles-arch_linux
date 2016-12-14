@@ -11,6 +11,8 @@
 [push]
   default = current
   followTags = true
+[remote "origin"]
+  fetch = +refs/heads/*:refs/remotes/origin/*
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
