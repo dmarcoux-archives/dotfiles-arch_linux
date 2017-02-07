@@ -17,3 +17,8 @@
   email = danymarcoux@gmail.com
   name = Dany Marcoux
   signingKey = 82FA5A4A
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
