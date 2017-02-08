@@ -11,8 +11,11 @@ keycode 66 = Control_L
 add control = Control_L
 
 ! AltGr + 4 produces €
-keycode 13 = 4 dollar 4 dollar EuroSign NoSymbol EuroSign
+keycode 13 = 4 dollar 4 dollar EuroSign EuroSign
+
+! AltGr + s produces ß (Doesn't work somehow...)
+keycode 39 = s S s S ssharp ssharp
 
 ! AltGr + Space produces a normal space, instead of a non-breakable space (often resulting in "command not found" errors when piping commands)
 ! Credits: http://stackoverflow.com/questions/19999712/after-a-pipe-the-command-is-considered-prefixed-with-a-space
-keycode 65 = space NoSymbol space NoSymbol space NoSymbol
+keycode 65 = space space space space space space
