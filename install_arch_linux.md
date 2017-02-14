@@ -170,8 +170,6 @@ Pull the installation medium from the system now
 
 ### Post-installation
 
-Log in as `root`
-
 Sync `pacman` databases
 ```
 $ pacman -Syy
@@ -206,6 +204,7 @@ $ stow vim # An example...
 Copy the boot loader configuration from my dotfiles
 ```
 $ sudo cp boot/boot/loader/entries/arch.conf /boot/loader/entries/
+$ sudo cp boot/boot/loader/loader.conf /boot/loader/
 ```
 
 Generate the locales
@@ -249,15 +248,14 @@ Install packages from AUR
 $ aura --noconfirm -A $(< pkgs/aur-pkgs.txt)
 ```
 
-Log out of `root` and log back in as the user created earlier
-```
-$ exit
-```
-
 Enable services and start them if needed
 ```
 $ systemctl enable something --now
 ```
 
-TODO:
-1. SSH key to GitHub
+[Add SSH key to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+
+Switch my dotfiles' git remote from HTTP to SSH
+```
+$ git remote set-url origin git@github.com:dmarcoux/dotfiles.git
+```
