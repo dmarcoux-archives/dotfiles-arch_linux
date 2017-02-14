@@ -2,10 +2,15 @@
 #
 # Source: https://github.com/masterkorp/openvpn-update-resolv-conf (Slightly changed)
 # Parses DHCP options from openvpn to update resolv.conf
-# To use set as 'up' and 'down' script in your openvpn *.conf:
+#
+# To use, follow these steps:
+# 1. Run `sudo chmod 755 /etc/openvpn/{client,server}/.` (To make sure the script is executable)
+# 2. Add the following lines in your openvpn *.conf:
 # script-security 2
-# up /etc/openvpn/update-resolv-conf
-# down /etc/openvpn/update-resolv-conf
+# up /etc/openvpn/client/update-resolv-conf
+# down /etc/openvpn/client/update-resolv-conf
+#
+#
 RESOLVCONF=/usr/bin/resolvconf
 
 case $script_type in
