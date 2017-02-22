@@ -8,4 +8,5 @@ Target = *
 [Action]
 Description = Update the list of apps for dmenu-frecency
 When = PostTransaction
+Depends = dmenu-frecency
 Exec = /usr/bin/env dmenu-frecency --read-apps
