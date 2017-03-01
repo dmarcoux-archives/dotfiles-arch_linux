@@ -52,52 +52,19 @@ fi
 
 #----- Docker
 
-# Remove all non-running containers
-#   OR
 # Remove containers based on their name
 #
 # $1: name (partial or complete)
 drm() {
-  if [ -z "$1" ]; then # No name...
-    echo -e "Remove all non-running Docker containers?\n"
+  echo -e "Remove the following containers?\n"
 
-    docker ps --all --filter=status=exited # See what we would remove
-
-    echo "" # Skipping a line
-
-    select choice in Yes No; do
-      case $choice in
-	Yes) docker ps --all --quiet | xargs --no-run-if-empty docker rm; break;;
-	No) break;;
-      esac
-    done
-  else
-    echo -e "Remove the following containers?\n"
-
-    docker ps --all --filter="name=$1" # See what we would remove
-
-    echo "" # Skipping a line
-
-    select choice in Yes No; do
-      case $choice in
-	Yes) docker ps --all --quiet --filter="name=$1" | xargs --no-run-if-empty docker rm; break;;
-	No) break;;
-      esac
-    done
-  fi
-}
-
-# Remove all unused images
-drmi() {
-  echo -e "Remove all unused Docker images?\n"
-
-  docker images --filter=dangling=true # See what we would remove
+  docker ps --all --filter="name=$1" # See containers we would remove
 
   echo "" # Skipping a line
 
   select choice in Yes No; do
     case $choice in
-      Yes) docker images --quiet --filter=dangling=true | xargs --no-run-if-empty docker rmi; break;;
+      Yes) docker ps --all --quiet --filter="name=$1" | xargs --no-run-if-empty docker rm; break;;
       No) break;;
     esac
   done
@@ -107,13 +74,13 @@ drmi() {
 dstop() {
   echo -e "Stop all Docker containers?\n"
 
-  docker ps # See what we would stop
+  docker ps # See containers we would stop
 
   echo "" # Skipping a line
 
   select choice in Yes No; do
     case $choice in
-      Yes) docker ps --all --quiet | xargs --no-run-if-empty docker stop; break;;
+      Yes) docker ps --quiet | xargs --no-run-if-empty docker stop; break;;
       No) break;;
     esac
   done
