@@ -6,3 +6,6 @@
 
 # Save videos under "~/Videos/WebsiteName/" with the filename "VideoTitle <VideoResolution>.<VideoExtension>"
 --output "~/Videos/%(extractor)s/%(title)s <%(resolution)s>.%(ext)s"
+
+# Select the best audio quality (when extracting audio with -x/--extract-audio)
+--audio-quality 0
