@@ -1,6 +1,12 @@
 # Do not overwrite files
 --no-overwrites
 
+# Add metadata to the video files
+--add-metadata
+
+# Write thumbnail image to disk
+--write-thumbnail
+
 # Write video description to a .description file
 --write-description
 
