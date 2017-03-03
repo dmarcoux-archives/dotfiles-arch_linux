@@ -10,6 +10,9 @@
 # Write video description to a .description file
 --write-description
 
+# Restrict filenames to only ASCII characters, and avoid "&" and spaces in filenames
+--restrict-filenames
+
 # Save videos under "~/Videos/WebsiteName/" with the filename "VideoTitle---VideoId.VideoExtension"
 --output "~/Videos/%(extractor_key)s/%(title)s---%(id)s.%(ext)s"
 
