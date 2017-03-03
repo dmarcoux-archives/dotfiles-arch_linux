@@ -10,8 +10,8 @@
 # Write video description to a .description file
 --write-description
 
-# Save videos under "~/Videos/WebsiteName/" with the filename "VideoTitle <VideoResolution>.<VideoExtension>"
---output "~/Videos/%(extractor)s/%(title)s <%(resolution)s>.%(ext)s"
+# Save videos under "~/Videos/WebsiteName/" with the filename "VideoTitle---VideoId.VideoExtension"
+--output "~/Videos/%(extractor_key)s/%(title)s---%(id)s.%(ext)s"
 
 # Select the best audio quality (when extracting audio with -x/--extract-audio)
 --audio-quality 0
