@@ -41,9 +41,6 @@ Plug 'https://github.com/unblevable/quick-scope'
 
 "---------- Completion Plugins
 
-" Close parentheses and square/curly brackets automatically after pressing Enter
-Plug 'https://github.com/rstacruz/vim-closer'
-
 " End certain structures automatically. In Ruby, this means adding end after if, do, def and several other keywords
 Plug 'https://github.com/tpope/vim-endwise'
 
@@ -127,7 +124,6 @@ let g:AutoPairsShortcutJump = ''
 
 " Change the default options of the gofmt command
 let g:go_fmt_options = '-s'
-
 
 " Always use the quickfix list for vim-go's output
 let g:go_list_type="quickfix"
