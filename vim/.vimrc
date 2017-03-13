@@ -28,7 +28,7 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-sleuth'
 
 " Class outline viewer
-" Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/majutsushi/tagbar'
 
 " Simple and easy-to-use alignment plugin
 Plug 'https://github.com/junegunn/vim-easy-align'
@@ -113,7 +113,7 @@ colorscheme solarized
 
 "---------- tagbar
 
-" autocmd BufEnter * :TagbarOpen
+autocmd BufEnter * :TagbarOpen
 
 "---------- auto-pairs
 
