@@ -1,0 +1,2 @@
+# pacman doesn't fallback to pacaur (I use pacman for official packages and pacaur for AUR)
+fallback=false
