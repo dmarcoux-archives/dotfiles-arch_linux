@@ -1,4 +1,4 @@
 alias pacman='sudo pacman'
 
-# System update
-alias sup='pacman -Syu --noconfirm && aura -Akyu --noconfirm'
+# System update: Official packages, then AUR packages
+alias sup='pacman --sync --refresh --sysupgrade && pacaur --update --devel --needed'
