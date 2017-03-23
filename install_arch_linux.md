@@ -238,14 +238,14 @@ Set the default shell (see the list with `chsh -l`)
 $ chsh -s /usr/bin/zsh
 ```
 
-Install aura (if I need packages from AUR)
+Install AUR helper (if I need packages from AUR)
 ```
-$ bash scripts/install_aura.sh
+$ ./scripts/install_pacaur.sh
 ```
 
 Install packages from AUR
 ```
-$ aura --noconfirm -A $(< pkgs/aur-pkgs.txt)
+$ pacaur -y $(< pkgs/aur-pkgs.txt)
 ```
 
 Enable services and start them if needed

@@ -38,13 +38,13 @@ Install packages from official repositories
 
 `pacman -S $(< pkgs/pkgs.txt)`
 
-Install aura (if you need packages from AUR)
+Install AUR helper (if you need packages from AUR)
 
-`bash scripts/install_aura.sh`
+`./scripts/install_pacaur.sh`
 
 Install packages from AUR
 
-`aura -A $(< pkgs/aur-pkgs.txt)`
+`pacaur -y $(< pkgs/aur-pkgs.txt)`
 
 Install *xyz* in $HOME (for example, vim)
 
