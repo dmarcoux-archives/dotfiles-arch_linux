@@ -79,6 +79,8 @@ bar {
     }
 }
 
+exec_always ~/dotfiles/scripts/set_keyboard_layout.sh
+
 #################
 # Applications
 #################
