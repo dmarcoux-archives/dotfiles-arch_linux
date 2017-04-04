@@ -81,6 +81,8 @@ bar {
 
 exec_always ~/dotfiles/scripts/set_keyboard_layout.sh
 
+exec_always ~/dotfiles/scripts/set_xrandr_dpi.sh
+
 #################
 # Applications
 #################
