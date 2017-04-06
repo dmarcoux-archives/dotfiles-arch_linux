@@ -8,8 +8,10 @@ setopt ALWAYS_TO_END
 fpath=($XDG_CONFIG_HOME/zsh/completions $fpath)
 
 # Enable autocompletion
-autoload -U compinit
-compinit
+autoload -U +X compinit && compinit
+
+# Enable usage of bash autocompletion functions
+autoload -U +X bashcompinit && bashcompinit
 
 # Case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
