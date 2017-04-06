@@ -13,6 +13,8 @@
   followTags = true
 [remote "origin"]
   fetch = +refs/heads/*:refs/remotes/origin/*
+[stash]
+  showPatch = true
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
