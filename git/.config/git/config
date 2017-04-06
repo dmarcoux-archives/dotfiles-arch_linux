@@ -15,6 +15,8 @@
   fetch = +refs/heads/*:refs/remotes/origin/*
 [stash]
   showPatch = true
+[status]
+  showUntrackedFiles = all
 [user]
   email = danymarcoux@gmail.com
   name = Dany Marcoux
