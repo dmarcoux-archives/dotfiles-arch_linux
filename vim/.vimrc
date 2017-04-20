@@ -10,8 +10,8 @@ call plug#begin('~/.vim/plugged')
 
 "---------- Search Plugins
 
-" Full path fuzzy file, buffer, mru, tag, ... finder
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+" Fuzzy finder for files, buffers, tags, etc...
+Plug 'https://github.com/junegunn/fzf.vim'
 
 "---------- Efficiency Plugins
 
@@ -77,21 +77,13 @@ call plug#end()
 
 "-------------------- Plugins Settings
 
-"---------- ctrlp.vim
+"---------- fzf.vim
 
-" Display match window at the bottom and order matching files top to bottom
-let g:ctrlp_match_window='bottom,order:ttb'
+" Prefix all fzf.vim commands with Fzf
+let g:fzf_command_prefix = 'Fzf'
 
-" Use ag to find files
-" %s -> Target directory
-" -l -> display matching files, not matching lines
-" --nocolor -> disable color printing
-" --hidden -> match hidden files
-" -g -> print matching filenames
-let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
-
-" When opening a file, if it's already open in a window somewhere, try to jump to it instead of opening a new instance
-let g:ctrlp_switch_buffer='Et'
+" Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
 
 "---------- UltiSnips
 
@@ -213,8 +205,11 @@ nmap ga <Plug>(EasyAlign)
 " Non-recursive mapping for leader + Enter to disable text highlighting
 noremap <silent> <leader><CR> :noh<CR>
 
-" Non-recursive mapping for Ctrl + B to start ctrlp.vim in buffer mode, which is handy to switch between opened buffers
-noremap <C-B> :CtrlPBuffer<CR>
+" Non-recursive mapping for Ctrl + P to open files with fzf
+noremap <C-P> :FzfFiles<CR>
+
+" Non-recursive mapping for Ctrl + B to switch between opened buffers with fzf
+noremap <C-B> :FzfBuffer<CR>
 
 "-------------------- Command Mode
 
