@@ -8,6 +8,8 @@
   compactionHeuristic = true
 [fetch]
   prune = true
+[gpg]
+  program = gpg2
 [push]
   default = current
   followTags = true
