@@ -85,6 +85,14 @@ let g:fzf_command_prefix = 'Fzf'
 " Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
+" Add FzfProjectFiles command which runs 'FzfFiles' on project root (if it has .git),
+" and yet act on current directory if it's not under a project
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! FzfProjectFiles execute 'FzfFiles' s:find_git_root()
+
 "---------- UltiSnips
 
 " Press Tab to expand trigger
@@ -206,7 +214,7 @@ nmap ga <Plug>(EasyAlign)
 noremap <silent> <leader><CR> :noh<CR>
 
 " Non-recursive mapping for Ctrl + P to open files with fzf
-noremap <C-P> :FzfFiles<CR>
+noremap <C-P> :FzfProjectFiles<CR>
 
 " Non-recursive mapping for Ctrl + B to switch between opened buffers with fzf
 noremap <C-B> :FzfBuffer<CR>
