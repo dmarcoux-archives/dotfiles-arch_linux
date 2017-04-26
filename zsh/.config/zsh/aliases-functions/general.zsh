@@ -1,5 +1,3 @@
-#----- General
-
 # Quicker than cd ..; cd ...; etc...
 #   ~$ cd ~/dir/example/folder
 #   ~/dir/example/folder$ up 2
@@ -48,52 +46,4 @@ extract() {
         echo "$1 - file does not exist"
     fi
 fi
-}
-
-#----- Docker
-
-# Remove containers based on their name
-#
-# $1: name (partial or complete)
-drm() {
-  echo -e "Remove the following containers?\n"
-
-  docker ps --all --filter="name=$1" # See containers we would remove
-
-  echo "" # Skipping a line
-
-  select choice in Yes No; do
-    case $choice in
-      Yes) docker ps --all --quiet --filter="name=$1" | xargs --no-run-if-empty docker rm; break;;
-      No) break;;
-    esac
-  done
-}
-
-# Stop all containers
-dstop() {
-  echo -e "Stop all Docker containers?\n"
-
-  docker ps # See containers we would stop
-
-  echo "" # Skipping a line
-
-  select choice in Yes No; do
-    case $choice in
-      Yes) docker ps --quiet | xargs --no-run-if-empty docker stop; break;;
-      No) break;;
-    esac
-  done
-}
-
-#----- youtube-dl
-
-# Download French and German videos from arte.tv
-#
-# $@: arte.tv URL(s) (either French or German)
-arte-dl() {
-  # Replace /fr/ or /de/ by {fr,de} in the arte.tv URL(s) (arte.tv handles correctly the switch of locale, even when done directly in their URLs)
-  # Pass the URL to xargs which expands {fr,de} (thanks to `sh -c`),
-  # then pass the output to youtube-dl (`-I %` positions the output after `youtube-dl`)
-  echo "$@" | sed -r "s@(/fr/|/de/)@/{fr,de}/@g" | xargs -I % sh -c "youtube-dl %"
 }
