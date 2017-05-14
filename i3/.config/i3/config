@@ -99,9 +99,6 @@ exec --no-startup-id pulseaudio --start
 # Start volume mixer
 exec --no-startup-id pnmixer
 
-# Set wallpaper
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
-
 # Start daemon for automounting optical and removable drives
 exec --no-startup-id devmon
 
