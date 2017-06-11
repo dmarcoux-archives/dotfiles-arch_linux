@@ -1,2 +1,0 @@
-# Choose the default program or the first program known to handle the file mimetype. This does not set the default application. (from mimeopen man page)
-has mimeo, flag f = mimeo "$1"
