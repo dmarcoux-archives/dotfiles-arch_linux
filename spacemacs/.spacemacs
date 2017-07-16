@@ -1,4 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
+;; Reload configuration with <SPC f e R>
 
 (defun dotspacemacs/layers ()
   (setq-default
@@ -23,14 +24,9 @@
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing s(global-linum-mode)) ; Show line numbers by defaultlash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
-   ;; List of configuration layers to load.
+   ;; List of configuration layers to load (See available layers with <SPC h l>)
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      ivy
      ;; auto-completion
      emacs-lisp
