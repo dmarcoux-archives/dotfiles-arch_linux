@@ -2,6 +2,7 @@
 application/json=vim.desktop;
 application/x-desktop=vim.desktop;
 application/x-perl=vim.desktop;
+application/x-shellscript=vim.desktop;
 image/bmp=feh.desktop;
 image/gif=feh.desktop;
 image/jpeg=feh.desktop;
