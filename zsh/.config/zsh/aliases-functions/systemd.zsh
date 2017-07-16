@@ -1,4 +1,4 @@
-alias sysd='systemctl'
+ealias sysd='systemctl'
 alias shutdown='systemctl poweroff'
 alias reboot='systemctl reboot'
 

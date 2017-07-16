@@ -1,5 +1,5 @@
-alias doc='docker'
-alias doccom='docker-compose'
+ealias doc='docker'
+ealias doccom='docker-compose'
 
 # Remove containers based on their name
 #

@@ -1,1 +1,1 @@
-alias ra='ranger'
+ealias ra='ranger'
