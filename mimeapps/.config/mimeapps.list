@@ -134,3 +134,4 @@ text/x-vcalendar=vim.desktop;
 text/x-vcard=vim.desktop;
 text/xml-external-parsed-entity=vim.desktop;
 text/xml=vim.desktop;
+application/pdf=mupdf.desktop;
