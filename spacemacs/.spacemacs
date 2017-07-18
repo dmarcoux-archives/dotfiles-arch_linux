@@ -1,30 +1,14 @@
 ;; -*- mode: emacs-lisp -*-
-;; Reload configuration with <SPC f e R>
+;; Reload configuration with <SPC>f e R
 
 (defun dotspacemacs/layers ()
   (setq-default
-   ;; Base distribution to use. This is a layer contained in the directory
-   ;; `+distribution'. For now available distributions are `spacemacs-base'
-   ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
-   ;; Lazy installation of layers (i.e. layers are installed only when a file
-   ;; with a supported type is opened). Possible values are `all', `unused'
-   ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
-   ;; not listed in variable `dotspacemacs-configuration-layers'), `all' will
-   ;; lazy install any layer that support lazy installation even the layers
-   ;; listed in `dotspacemacs-configuration-layers'. `nil' disable the lazy
-   ;; installation feature and you have to explicitly list a layer in the
-   ;; variable `dotspacemacs-configuration-layers' to install it.
-   ;; (default 'unused)
    dotspacemacs-enable-lazy-installation 'unused
-   ;; If non-nil then Spacemacs will ask for confirmation before installing
-   ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
-   ;; If non-nil layers with lazy install support are lazy installed.
-   ;; List of additional paths where to look for configuration layers.
-   ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
-   ;; List of configuration layers to load (See available layers with <SPC h l>)
+
+   ;; See available layers with <SPC> h l
    dotspacemacs-configuration-layers
    '(
      ivy
@@ -86,22 +70,10 @@ values."
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
    dotspacemacs-elpa-subdirectory nil
-   ;; One of `vim', `emacs' or `hybrid'.
-   ;; `hybrid' is like `vim' except that `insert state' is replaced by the
-   ;; `hybrid state' with `emacs' key bindings. The value can also be a list
-   ;; with `:variables' keyword (similar to layers). Check the editing styles
-   ;; section of the documentation for details on available variables.
-   ;; (default 'vim)
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
-   ;; Specify the startup banner. Default value is `official', it displays
-   ;; the official spacemacs logo. An integer value is the index of text
-   ;; banner, `random' chooses a random text banner in `core/banners'
-   ;; directory. A string value must be a path to an image format supported
-   ;; by your Emacs build.
-   ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -114,9 +86,7 @@ values."
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
-   ;; List of themes, the first of the list is loaded when spacemacs starts.
-   ;; Press <SPC> T n to cycle to the next theme in the list (works great
-   ;; with 2 themes variants, one dark and one light)
+   ;; Cycle through themes with <SPC> T n
    dotspacemacs-themes '(sanityinc-solarized-light
                          sanityinc-solarized-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -128,19 +98,15 @@ values."
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
-   ;; The leader key
    dotspacemacs-leader-key "SPC"
-   ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
-   ;; (default "SPC")
    dotspacemacs-emacs-command-key "SPC"
-   ;; The key used for Vim Ex commands (default ":")
    dotspacemacs-ex-command-key ":"
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
    dotspacemacs-emacs-leader-key "M-m"
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
-   dotspacemacs-major-mode-leader-key ","
+   dotspacemacs-major-mode-leader-key nil
    ;; Major mode leader key accessible in `emacs state' and `insert state'.
    ;; (default "C-M-m")
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
@@ -151,14 +117,11 @@ values."
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
-   ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
-   dotspacemacs-remap-Y-to-y$ nil
+   dotspacemacs-remap-Y-to-y$ t
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
    dotspacemacs-retain-visual-state-on-shift t
-   ;; If non-nil, J and K move lines up and down when in visual mode.
-   ;; (default nil)
-   dotspacemacs-visual-line-move-text nil
+   dotspacemacs-visual-line-move-text t
    ;; If non nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
    ;; (default nil)
    dotspacemacs-ex-substitute-global nil
@@ -231,13 +194,12 @@ values."
    dotspacemacs-show-transient-state-title t
    ;; If non nil show the color guide hint for transient state keys. (default t)
    dotspacemacs-show-transient-state-color-guide t
-   ;; If non nil unicode symbols are displayed in the mode line. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
    dotspacemacs-smooth-scrolling t
-   dotspacemacs-line-numbers t ; Show line numbers 
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -252,10 +214,10 @@ values."
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
    dotspacemacs-highlight-delimiters 'all
-   dotspacemacs-persistent-server nil ; If non nil, advise quit functions to keep server open when quitting. (default nil)
-   dotspacemacs-search-tools "ag" ; Search with ag
-   dotspacemacs-default-package-repository nil ; Use default package repository
-   dotspacemacs-whitespace-cleanup "trailing" ; Delete trailing whitespaces while saving buffer
+   dotspacemacs-persistent-server nil
+   dotspacemacs-search-tools "ag"
+   dotspacemacs-default-package-repository nil
+   dotspacemacs-whitespace-cleanup "trailing"
    ))
 
 (defun dotspacemacs/user-init ()
@@ -269,6 +231,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun dotspacemacs/user-config ()
   (setq x-select-enable-clipboard-manager nil) ; When exiting, prevent transferring data to the clipboard manager
+
+  ; Keybindings - Normal mode
+  (define-key evil-normal-state-map
+    ; Reverse find as in Vim with ,
+    "," 'evil-repeat-find-char-reverse)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
