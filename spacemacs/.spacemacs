@@ -215,7 +215,7 @@ values."
    ;; emphasis the current one). (default 'all)
    dotspacemacs-highlight-delimiters 'all
    dotspacemacs-persistent-server nil
-   dotspacemacs-search-tools "ag"
+   dotspacemacs-search-tools '("ag" "grep")
    dotspacemacs-default-package-repository nil
    dotspacemacs-whitespace-cleanup "trailing"
    ))
