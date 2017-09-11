@@ -124,6 +124,9 @@ exec --no-startup-id workrave
 # Start emacs server (to launch spacemacs quickly)
 exec --no-startup-id emacs --daemon
 
+# Start battery monitor (TODO: This shouldn't run on desktop computers)
+exec --no-startup-id cbatticon
+
 #################
 # Key bindings
 #################
