@@ -1,6 +1,6 @@
 #----- Editor & Browser
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=emacs
+export VISUAL=emacs
 export BROWSER=chromium
 
 #----- Locale
