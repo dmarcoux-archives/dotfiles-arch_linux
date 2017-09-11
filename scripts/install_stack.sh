@@ -4,3 +4,5 @@
 # This results in stack requiring the whole Haskell development ecosystem.
 # In order to avoid this, I prefer to manually install stack.
 curl -sSL https://get.haskellstack.org/ | sh
+
+# To uninstall, remove ~/.stack
