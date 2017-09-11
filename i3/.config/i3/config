@@ -89,6 +89,7 @@ exec_always ~/dotfiles/scripts/set_xrandr_dpi.sh
 
 # Assign applications to workspaces to have them start on a specific workspace
 assign [class="^Chromium$"] → $WS2
+assign [class="^Vlc$"] → $WS3
 
 # Start composite manager
 exec --no-startup-id compton -CGb --config ~/.config/compton/config
