@@ -7,5 +7,5 @@ if type npm > /dev/null; then
   npm config set prefix '~/.npm-global'
 
   # Add the directory to the PATH
-  export PATH="$PATH:~/.npm-global/bin"
+  export PATH=$PATH:~/.npm-global/bin
 fi
