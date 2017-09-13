@@ -15,7 +15,9 @@
      html
      sql
      yaml
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior nil
+                      auto-completion-tab-key-behavior nil)
      emacs-lisp
      haskell
      helm
