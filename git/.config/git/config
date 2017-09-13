@@ -1,6 +1,7 @@
 [commit]
   gpgSign = true
 [core]
+  editor = vim
   excludesFile = ~/.config/git/.gitignore_global
   fileMode = true
 [diff]
