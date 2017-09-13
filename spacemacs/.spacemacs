@@ -220,7 +220,7 @@ values."
    dotspacemacs-persistent-server nil
    dotspacemacs-search-tools '("ag" "grep")
    dotspacemacs-default-package-repository nil
-   dotspacemacs-whitespace-cleanup "trailing"
+   dotspacemacs-whitespace-cleanup 'trailing
    js2-basic-offset 2
    js-indent-level 2
    ))
@@ -236,6 +236,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
 (defun dotspacemacs/user-config ()
   (setq x-select-enable-clipboard-manager nil) ; When exiting, prevent transferring data to the clipboard manager
+  (setq show-trailing-whitespace t)
 
   ; Keybindings - Normal mode
   (define-key evil-normal-state-map
