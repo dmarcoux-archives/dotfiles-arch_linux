@@ -91,9 +91,9 @@ $ mount /dev/sda1 /mnt/boot
 
 ### System installation
 
-Install the system
+Install the system with `btrfs support`, `Intel CPUs microcode` and `linux-lts` kernel
 ```
-$ pacstrap -i /mnt base base-devel btrfs-progs
+$ pacstrap -i /mnt base base-devel btrfs-progs intel-ucode linux-lts linux-lts-headers --ignore linux
 ```
 
 Set up fstab
@@ -119,20 +119,9 @@ Install the boot loader
 $ bootctl install
 ```
 
-Create a boot entry
-```shell
-# /boot/loader/entries/arch.conf
-title Arch Linux
-linux /vmlinuz-linux
-initrd /initramfs-linux.img
-options root=/dev/sda2 rw
-```
+[Create the boot entry](https://github.com/dmarcoux/dotfiles/tree/master/boot/boot/loader/entries/arch-lts.conf)
 
-Select the default boot entry
-```shell
-# /boot/loader/loader.conf
-default arch
-```
+[Select the default boot entry](https://github.com/dmarcoux/dotfiles/blob/master/boot/boot/loader/loader.conf)
 
 Make sure we have a network connection after we reboot
 ```
@@ -199,12 +188,6 @@ $ stow -t / etc
 
 # Then all the rest
 $ stow vim # An example...
-```
-
-Copy the boot loader configuration from my dotfiles
-```
-$ sudo cp boot/boot/loader/entries/arch.conf /boot/loader/entries/
-$ sudo cp boot/boot/loader/loader.conf /boot/loader/
 ```
 
 Generate the locales
