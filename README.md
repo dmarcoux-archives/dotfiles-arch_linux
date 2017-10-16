@@ -20,17 +20,13 @@ Go to the dotfiles directory
 
 `cd dotfiles`
 
-Install packages from official repositories
-
-`pacman -S $(< pkgs/pkgs.txt)`
-
-Install AUR helper (if you need packages from AUR)
+Install AUR helper
 
 `./scripts/install_pacaur.sh`
 
-Install packages from AUR
+Install packages from official repositories and AUR
 
-`pacaur -y $(< pkgs/aur-pkgs.txt)`
+`pacman -S $(< pkgs/{,aur-}pkgs.txt)`
 
 Install *xyz* in $HOME (for example, vim)
 
