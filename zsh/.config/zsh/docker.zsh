@@ -1,36 +1,12 @@
 ealias doc='docker'
 ealias doccom='docker-compose'
 
-# Remove containers based on their name
-#
-# $1: name (partial or complete)
-drm() {
-  echo -e "Remove the following containers?\n"
+# Select Docker containers to remove
+# Tip: Amazing with default options --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all
+#      We can quickly select specific, multiple or all containers
+ealias drmf='docker ps --all | fzf --reverse --header-lines=1 --multi | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker rm'
 
-  docker ps --all --filter="name=$1" # See containers we would remove
-
-  echo "" # Skipping a line
-
-  select choice in Yes No; do
-    case $choice in
-      Yes) docker ps --all --quiet --filter="name=$1" | xargs --no-run-if-empty docker rm; break;;
-      No) break;;
-    esac
-  done
-}
-
-# Stop all containers
-dstop() {
-  echo -e "Stop all Docker containers?\n"
-
-  docker ps # See containers we would stop
-
-  echo "" # Skipping a line
-
-  select choice in Yes No; do
-    case $choice in
-      Yes) docker ps --quiet | xargs --no-run-if-empty docker stop; break;;
-      No) break;;
-    esac
-  done
-}
+# Select Docker containers to stop
+# Tip: Amazing with default options --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all
+#      We can quickly select specific, multiple or all containers
+ealias dstopf='docker ps | fzf --reverse --header-lines=1 --multi | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker stop'

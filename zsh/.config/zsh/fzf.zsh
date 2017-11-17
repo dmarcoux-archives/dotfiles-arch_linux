@@ -28,8 +28,11 @@ if type fzf > /dev/null; then
   }
   _fzf_default_colors
 
+  # Keybinds to select, deselect and toggle all results
+  local BIND_SELECT="--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+
   # Default options
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_COLORS"
+  export FZF_DEFAULT_OPTS="$BIND_SELECT $FZF_DEFAULT_COLORS"
 
   # Load default config files (completion and key bindings)
   # Completion at https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh
