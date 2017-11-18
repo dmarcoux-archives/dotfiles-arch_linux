@@ -4,11 +4,8 @@
 #   ~/dir$
 # Credits: http://www.bashoneliners.com/oneliners/oneliner/220/ (I simply reformated the script)
 up() {
-  DEPTH=$1;
-
-  if [ -z "${DEPTH}" ]; then # No depth provided...
-    DEPTH=1;
-  fi
+  # Defaults to 1 when no depth is provided
+  DEPTH=${1-1};
 
   for i in $(seq 1 ${DEPTH}); do
     cd ../
@@ -20,6 +17,7 @@ extract() {
   if [ -z "$1" ]; then
     # Display usage if no parameters given
     echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+    return
   fi
 
   for file in "$@"
