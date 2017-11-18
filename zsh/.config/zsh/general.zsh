@@ -24,7 +24,7 @@ extract() {
 
   for file in "$@"
   do
-    if [ -f "$file" ] ; then
+    if [ -f "$file" ]; then
       NAME=${file%.*}
       mkdir $NAME && cd $NAME
       case $file in
