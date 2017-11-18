@@ -52,3 +52,26 @@ extract() {
     fi
   done
 }
+
+# Export environment variables from a file (by default .env, but can be passed as an argument)
+exportenv() {
+  FILE=${1-.env}
+
+  if [ ! -f "$FILE" ]; then
+    echo "File $FILE not found"
+    return
+  fi
+
+  # Read $FILE, remove all commments and empty lines
+  VARS="$(cat $FILE | sed -e '/^[[:space:]]*$/d;/^#/d')"
+
+  if [ -z "$VARS" ]; then
+    echo "Nothing to export in the file $FILE"
+    return
+  fi
+
+  echo 'Exporting the environment variables:'
+  echo $VARS
+
+  export $(echo $VARS | xargs)
+}
