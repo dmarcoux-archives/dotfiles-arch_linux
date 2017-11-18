@@ -1,12 +1,15 @@
 ealias doc='docker'
 ealias doccom='docker-compose'
 
-# Select Docker containers to remove
-# Tip: Amazing with default options --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all
-#      We can quickly select specific, multiple or all containers
-ealias drmf='docker ps --all | fzf --reverse --header-lines=1 --multi | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker rm'
+# Docker with fzf
+# Tip: The following aliases are even better with this default option --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all
+#      We can quickly select one, multiple or all container(s)
 
-# Select Docker containers to stop
-# Tip: Amazing with default options --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all
-#      We can quickly select specific, multiple or all containers
-ealias dstopf='docker ps | fzf --reverse --header-lines=1 --multi | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker stop'
+# Select Docker containers and remove them
+ealias drmf='docker ps --all | fzf --reverse --header-lines=1 --multi | tr --squeeze-repeats " " | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker rm'
+
+# Select Docker containers and stop them
+ealias dstopf='docker ps | fzf --reverse --header-lines=1 --multi | tr --squeeze-repeats " " | cut --delimiter=" " --fields=1 | xargs --no-run-if-empty docker stop'
+
+# Select Docker images and remove them
+ealias drmif='docker image ls | fzf --reverse --header-lines=1 --multi | tr --squeeze-repeats " " | cut --delimiter=" " --fields=3 | xargs --no-run-if-empty docker rmi'
