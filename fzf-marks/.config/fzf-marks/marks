@@ -1,0 +1,10 @@
+videos : ~/Videos
+downloads : ~/Downloads
+go : ~/projets/go/src/github.com/dmarcoux
+projets : ~/projets
+python : ~/projets/python
+emplois : ~/projets/documents-emplois
+ruby : ~/projets/ruby
+config : ~/.config
+pass : ~/.config/pass
+dotfiles : ~/dotfiles
