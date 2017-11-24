@@ -96,8 +96,7 @@ if type fzf > /dev/null; then
     if [[ -n ${jumpline} ]]; then
       jumpdir=$(echo "${jumpline}" | sed -n "s/.* : \(.*\)$/\1/p" | sed "s#~#${HOME}#")
       marks=$(handle_symlinks)
-      perl -p -i -e "s#${jumpline}\n##g" "${marks}"
-      cd "${jumpdir}" && echo "${jumpline}" >> "${MARKS_FILE}"
+      cd "${jumpdir}"
     fi
     zle && zle reset-prompt
   }
