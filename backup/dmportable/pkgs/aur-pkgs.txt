@@ -1,0 +1,16 @@
+aic94xx-firmware
+cmst
+cower
+dmenu-frecency-git
+git-lfs
+pacaur
+pkgbuild-introspection-git
+pnmixer-git
+pyenv
+rbenv
+ruby-build
+samsung-unified-driver
+sflock-git
+tag-ag
+wd719x-firmware
+yank
