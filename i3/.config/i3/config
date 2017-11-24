@@ -91,9 +91,6 @@ exec_always ~/dotfiles/scripts/set_xrandr_dpi.sh
 assign [class="^Chromium$"] → $WS2
 assign [class="^Vlc$"] → $WS3
 
-# Start composite manager
-exec --no-startup-id compton -CGb --config ~/.config/compton/config
-
 # Start audio server
 exec --no-startup-id pulseaudio --start
 
