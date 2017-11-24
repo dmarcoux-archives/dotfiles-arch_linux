@@ -1,3 +1,3 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 synclient TouchpadOff=1
