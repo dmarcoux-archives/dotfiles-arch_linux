@@ -223,7 +223,7 @@ $ chsh -s /usr/bin/zsh
 
 Install AUR helper (if I need packages from AUR)
 ```
-$ ./scripts/install_pacaur.sh
+$ scripts/install_pacaur.sh
 ```
 
 Install packages from AUR
@@ -231,9 +231,9 @@ Install packages from AUR
 $ pacaur -y $(< pkgs/aur-pkgs.txt)
 ```
 
-Enable services and start them if needed
+Enable and start services from backup (if needed)
 ```
-$ systemctl enable something --now
+$ systemctl --now enable $(< backup/dmportable/systemd_units/enabled_services.txt)
 ```
 
 [Add SSH key to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
