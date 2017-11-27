@@ -120,7 +120,6 @@ texinfo
 the_silver_searcher
 time
 tk
-tlp
 ttf-dejavu
 ttf-font-awesome
 ttf-liberation

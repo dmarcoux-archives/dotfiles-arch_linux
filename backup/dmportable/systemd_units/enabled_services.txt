@@ -7,5 +7,3 @@ docker.service
 getty@.service
 org.cups.cupsd.service
 systemd-timesyncd.service
-tlp-sleep.service
-tlp.service
