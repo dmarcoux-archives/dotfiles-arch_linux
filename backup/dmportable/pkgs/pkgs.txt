@@ -137,6 +137,7 @@ wireless_tools
 workrave
 wpa_supplicant
 xcape
+xf86-video-intel
 xfce4-clipman-plugin
 xfce4-screenshooter
 xfsprogs

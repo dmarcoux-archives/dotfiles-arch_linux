@@ -1,10 +1,8 @@
-#!/usr/bin/env bash -e
-# -e: If any command in the script fails (i.e. returns a non-zero exist status), then the whole script immediately fails
-# This script always keeps the primary monitor on and uses a secondary monitor when available
+#!/usr/bin/env bash
 
-PRIMARY="eDP-1"
-SECONDARY_1="HDMI-1"
-SECONDARY_2="VIRTUAL-1"
+PRIMARY="eDP1"
+SECONDARY_1="HDMI1"
+SECONDARY_2="VIRTUAL1"
 
 if (xrandr | grep "$SECONDARY_1 connected"); then
     xrandr --output $SECONDARY_2 --off
