@@ -1,7 +1,7 @@
 #----- Editor & Browser
 export EDITOR=emacs
 export VISUAL=emacs
-export BROWSER=chromium
+export BROWSER=firefox
 
 #----- Locale
 export LC_COLLATE=en_US.UTF-8
