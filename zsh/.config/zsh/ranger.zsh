@@ -8,4 +8,6 @@ if type ranger > /dev/null; then
           exit
       fi
   }
+
+  ealias ra='ranger'
 fi
