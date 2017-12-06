@@ -84,6 +84,9 @@ exec ~/dotfiles/scripts/set_keyboard_layout.sh
 
 exec_always ~/dotfiles/scripts/set_xrandr_dpi.sh
 
+# Set monitors' configuration
+exec_always ~/dotfiles/scripts/set_xrandr_both.sh
+
 #################
 # Applications
 #################
