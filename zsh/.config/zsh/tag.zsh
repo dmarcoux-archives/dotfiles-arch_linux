@@ -1,5 +1,5 @@
 # If tag is installed, set it up
-if (( $+commands[tag] )); then
+if type tag > /dev/null; then
   tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
 
   # ag doesn't have a way to set default options, so they are set in the alias below...
