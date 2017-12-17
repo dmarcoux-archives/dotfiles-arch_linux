@@ -1,4 +1,5 @@
 acpi
+android-file-transfer
 anki
 arandr
 aspell
