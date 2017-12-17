@@ -33,6 +33,7 @@ docker
 docker-compose
 e2fsprogs
 emacs
+exfat-utils
 fakeroot
 file
 filesystem
