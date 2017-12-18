@@ -23,12 +23,22 @@ select choice in "Yes" "No"; do
   case $choice in
     Yes ) echo 'Export GPG keys'
           gpg2 --export-secret-keys --armor --output ${BACKUP_DIRS[2]}/secrets.asc
+
           echo 'Export SSH keys'
           cp ~/.ssh/*id_rsa* ${BACKUP_DIRS[2]}
+
           echo 'Put keys in a tar archive'
-          tar --create --directory=${BACKUP_DIRS[2]} --file=keys.tar secrets.asc *id_rsa*
-          echo 'Encrypt the tar archive'
-          # TODO: Finish this
+          $(cd ${BACKUP_DIRS[2]} && tar --create --file=keys.tar secrets.asc *id_rsa*)
+
+          echo 'Encrypt the tar archive with GPG'
+          $(cd ${BACKUP_DIRS[2]} && gpg --symmetric --cipher-algo=AES256 keys.tar)
+
+          echo 'Remove exported GPG keys, SSH keys and the unencrypted tar archive'
+          $(cd ${BACKUP_DIRS[2]} && rm secrets.asc *id_rsa* keys.tar)
+
+          echo 'Reload GPG agent to clear the cached passphrase'
+          gpg-connect-agent reloadagent /bye 1> /dev/null
+
           break ;;
     No ) break ;;
   esac
