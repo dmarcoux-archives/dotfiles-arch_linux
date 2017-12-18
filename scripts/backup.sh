@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# When changing this, do the same in restore_backup.sh
 BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys})
 
 echo 'Create backup directories'
@@ -30,10 +31,10 @@ select choice in "Yes" "No"; do
           echo 'Put keys in a tar archive'
           $(cd ${BACKUP_DIRS[2]} && tar --create --file=keys.tar secrets.asc *id_rsa*)
 
-          echo 'Encrypt the tar archive with GPG'
+          echo 'Encrypt the tar archive'
           $(cd ${BACKUP_DIRS[2]} && gpg --symmetric --cipher-algo=AES256 keys.tar)
 
-          echo 'Remove exported GPG keys, SSH keys and the unencrypted tar archive'
+          echo 'Remove exported GPG/SSH keys and the unencrypted tar archive'
           $(cd ${BACKUP_DIRS[2]} && rm secrets.asc *id_rsa* keys.tar)
 
           echo 'Reload GPG agent to clear the cached passphrase'
