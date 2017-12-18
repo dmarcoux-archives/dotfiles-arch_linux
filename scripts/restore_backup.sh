@@ -43,9 +43,9 @@ select choice in "Yes" "No"; do
   esac
 done
 
-echo 'Restoring timezone'
+echo 'Restoring timezone (be sure to have the package "ntp")'
 timedatectl set-ntp true
 timedatectl set-timezone $(cat ${BACKUP_DIRS[3]}/timezone.txt)
 
-echo 'Restoring default shell'
+echo 'Restoring default shell (see the list with "chsh -l")'
 chsh -s $(cat ${BACKUP_DIRS[3]}/shell.txt)

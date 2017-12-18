@@ -210,17 +210,6 @@ Reset my dotfiles to their original state (since some files might have been over
 $ git checkout etc/
 ```
 
-Set the timezone (make sure to have the package `ntp`)
-```
-$ timedatectl set-ntp true
-$ timedatectl set-timezone Europe/Berlin
-```
-
-Set the default shell (see the list with `chsh -l`)
-```
-$ chsh -s /usr/bin/zsh
-```
-
 Install AUR helper (if I need packages from AUR)
 ```
 $ scripts/install_pacaur.sh
@@ -242,3 +231,5 @@ Switch my dotfiles' git remote from HTTP to SSH
 ```
 $ git remote set-url origin git@github.com:dmarcoux/dotfiles.git
 ```
+
+TODO: Run restore_backup.sh (decide when to do this)
