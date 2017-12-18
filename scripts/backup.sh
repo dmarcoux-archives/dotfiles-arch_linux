@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # When changing this, do the same in restore_backup.sh
-BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys})
+BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys,general})
 
 echo 'Creating backup directories'
 mkdir --parents ${BACKUP_DIRS[*]}
@@ -45,3 +45,9 @@ select choice in "Yes" "No"; do
     No ) break ;;
   esac
 done
+
+echo 'Exporting timezone'
+timedatectl | tr --squeeze-repeats " " | sed -n 's|^ Time zone: \(.*/.*\) (.*)$|\1|p' > ${BACKUP_DIRS[3]}/timezone.txt
+
+echo 'Exporting default shell'
+echo $SHELL > ${BACKUP_DIRS[3]}/shell.txt

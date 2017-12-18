@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Same as in backup.sh
-BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys})
+BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys,general})
 
 echo 'Restore GPG and SSH keys?'
 select choice in "Yes" "No"; do
@@ -21,7 +21,7 @@ select choice in "Yes" "No"; do
           done
 
           if [ ! -e ${BACKUP_DIRS[2]}/keys.tar ]; then
-            echo 'Failed to decrypt tar archive. Exiting...'
+            echo 'Failed to decrypt tar archive. NOT restoring GPG and SSH keys...'
             break
           fi
 
@@ -42,3 +42,10 @@ select choice in "Yes" "No"; do
     No ) break ;;
   esac
 done
+
+echo 'Restoring timezone'
+timedatectl set-ntp true
+timedatectl set-timezone $(cat ${BACKUP_DIRS[3]}/timezone.txt)
+
+echo 'Restoring default shell'
+chsh -s $(cat ${BACKUP_DIRS[3]}/shell.txt)
