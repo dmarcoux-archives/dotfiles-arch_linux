@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Keep pacman cache for 2 last versions of upgraded packages
+When = PostTransaction
+Exec = /usr/bin/paccache --remove --keep 2
