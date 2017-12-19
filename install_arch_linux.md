@@ -220,11 +220,6 @@ Install packages from AUR
 $ pacaur -y $(< pkgs/aur-pkgs.txt)
 ```
 
-Enable and start services from backup (if needed)
-```
-$ systemctl --now enable $(< backup/dmportable/systemd_units/enabled_services.txt)
-```
-
 [Add SSH key to GitHub](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 Switch my dotfiles' git remote from HTTP to SSH

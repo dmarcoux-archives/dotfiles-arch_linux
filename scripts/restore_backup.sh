@@ -3,6 +3,9 @@
 # Same as in backup.sh
 BACKUP_DIRS=(~/dotfiles/backup/$(hostname)/{pkgs,systemd_units,keys,general})
 
+echo 'Restoring list of enabled systemd services'
+systemctl --now enable $(< ${BACKUP_DIRS[1]}/enabled_services.txt)
+
 echo 'Restore GPG and SSH keys?'
 select choice in "Yes" "No"; do
   case $choice in
