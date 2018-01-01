@@ -14,7 +14,7 @@ Go to your home directory
 
 Clone the repo
 
-`git clone http://github.com/dmarcoux/dotfiles`
+`git clone http://github.com/dmarcoux/dotfiles-arch_linux dotfiles`
 
 Go to the dotfiles directory
 
