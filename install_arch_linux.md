@@ -119,9 +119,9 @@ Install the boot loader
 $ bootctl install
 ```
 
-[Create the boot entry](https://github.com/dmarcoux/dotfiles/tree/master/boot/boot/loader/entries/arch-lts.conf)
+[Create the boot entry](https://github.com/dmarcoux/dotfiles-arch_linux/tree/master/boot/boot/loader/entries/arch-lts.conf)
 
-[Select the default boot entry](https://github.com/dmarcoux/dotfiles/blob/master/boot/boot/loader/loader.conf)
+[Select the default boot entry](https://github.com/dmarcoux/dotfiles-arch_linux/blob/master/boot/boot/loader/loader.conf)
 
 Make sure we have a network connection after we reboot
 ```
@@ -171,7 +171,7 @@ $ pacman -S git gvim stow
 
 Clone my dotfiles repository using HTTP for now since my SSH key isn't set on GitHub yet, then go into the directory
 ```
-$ git clone http://github.com/dmarcoux/dotfiles.git
+$ git clone http://github.com/dmarcoux/dotfiles-arch_linux.git ~/dotfiles
 $ cd dotfiles
 ```
 
@@ -224,7 +224,7 @@ $ pacaur -y $(< pkgs/aur-pkgs.txt)
 
 Switch my dotfiles' git remote from HTTP to SSH
 ```
-$ git remote set-url origin git@github.com:dmarcoux/dotfiles.git
+$ git remote set-url origin git@github.com:dmarcoux/dotfiles-arch_linux.git
 ```
 
 TODO: Run restore_backup.sh (decide when to do this)
