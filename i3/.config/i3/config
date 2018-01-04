@@ -140,7 +140,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym $mod+Shift+R restart
 
 # Screen lock
-bindsym $mod+Shift+C exec sflock
+bindsym $mod+Shift+C exec i3lock --show-failed-attempts
 
 # Start a terminal
 bindsym $mod+Return exec termite
